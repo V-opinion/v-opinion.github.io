@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R247XM39WE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-R247XM39WE');
+</script>
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Viewport / mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- SEO: title and description -->
+    <title>A Conflict-Resolution Model for Israel–Palestine – Multireligionval</title>
+    <meta name="description" content="Explore a detailed conflict-resolution model for Israel–Palestine based on a complete separation of religion and state and a multi-religion election system that gives all citizens equal political representation.">
+
+    <!-- SEO: indexing -->
+    <meta name="robots" content="index,follow">
+
+    <!-- SEO: keywords -->
+    <meta name="keywords" content="conflict resolution model, Israel Palestine conflict, Inter-Religious Dialogue,Multireligionv as a conflict resolution model , multi-faith elections, separation of religion and state and eligious and politic,
+    democratic conflict resolution, our conflict resolution model">
+         
+    <link rel="canonical" href="https://multireligionvalsystem.eu.org/Conflict-resolution-model/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="A Conflict-Resolution Model for Israel–Palestine – Multi-Religion Election System">
+    <meta property="og:description" content="A democratic conflict resolution model that uses a multi-religion election system and full separation of religion and state to transform long-standing religious and political disputes into peaceful decision-making.">
+    <meta property="og:url" content="https://multireligionvalsystem.eu.org/Conflict-resolution-model/">
+    <meta property="og:site_name" content="Multi-Religion Election Syste (MRES)">
+     <meta property="og:image" content="https://multireligionvalsystem.eu.org/Enskild-motion-FDU-Riksdagen/og.webp" />
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:type" content="image/png">
+    <meta property="article:publisher" content="https://www.facebook.com/groups/Multireligionvalsystemet/">
+    <meta property="article:modified_time" content="2024-04-01T19:15:54+00:00">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@DPNS">
+    <meta name="twitter:title" content="A Conflict-Resolution Model for Israel–Palestine – Multi-Religion Election System">
+    <meta name="twitter:description" content="See how a multi-religion election system can replace violent conflict with democratic, equal representation for all religious communities.">
+    <meta name="twitter:image" content="https://www.multireligionvalsystem.eu.org/wp-content/uploads/2020/01/FDU-Favicon-letters.png">
+
+    <!-- Verification -->
+    <meta name="google-site-verification" content="WdnsMxOviwQTsK0Dxo8FqJ2spmgqYOGkSwh6Nl-4wZk">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="https://multireligionvalsystem.eu.org/Conflict-resolution-model/dist/css/main.css">
+
+   
+    
+</head>
+ <div id="wb_MediaPlayer1" style="display:block;width:100%;z-index:10;">
+                     <audio id="MediaPlayer1" autoplay controls>
+                        <source src="https://multireligionvalsystem.eu.org/FAQ/TRK.m4a" type="audio/wav">
+                     </audio>
+                  </div>
+    </a> </span></div></div></div></div></div></div></section> <script>
+                document.addEventListener("DOMContentLoaded", function() {
+
+var canvas = document.createElement('canvas');
+canvas.width = 200;
+canvas.height = 200;
+document.body.appendChild(canvas);
+var ctx = canvas.getContext('2d');
+var radius = canvas.height / 2;
+ctx.translate(radius, radius);
+radius = radius * 0.90
+setInterval(drawClock, 1000);
+
+function drawClock() {
+    drawFace(ctx, radius);
+    drawNumbers(ctx, radius);
+    drawTime(ctx, radius);
+}
+
+function drawFace(ctx, radius) {
+    var grad;
+    ctx.beginPath();
+    ctx.arc(0, 0, radius, 0, 2 * Math.PI);
+    ctx.fillStyle = 'green';
+    ctx.fill();
+    grad = ctx.createRadialGradient(0, 0, radius * 0.95, 0, 0, radius * 1.05);
+    grad.addColorStop(0, '#333');
+    grad.addColorStop(0.5, 'white');
+    grad.addColorStop(1, '#333');
+    ctx.strokeStyle = grad;
+    ctx.lineWidth = radius * 0.1;
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(0, 0, radius * 0.1, 0, 2 * Math.PI);
+    ctx.fillStyle = '#333';
+    ctx.fill();
+}
+
+function drawNumbers(ctx, radius) {
+    var ang;
+    var num;
+    ctx.font = radius * 0.15 + "px arial";
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "center";
+    for (num = 1; num < 13; num++) {
+        ang = num * Math.PI / 6;
+        ctx.rotate(ang);
+        ctx.translate(0, -radius * 0.85);
+        ctx.rotate(-ang);
+        ctx.fillText(num.toString(), 0, 0);
+        ctx.rotate(ang);
+        ctx.translate(0, radius * 0.85);
+        ctx.rotate(-ang);
+    }
+}
+
+function drawTime(ctx, radius) {
+    var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    //hour
+    hour = hour % 12;
+    hour = (hour * Math.PI / 6) +
+        (minute * Math.PI / (6 * 60)) +
+        (second * Math.PI / (360 * 60));
+    drawHand(ctx, hour, radius * 0.5, radius * 0.07);
+    //minute
+    minute = (minute * Math.PI / 30) + (second * Math.PI / (30 * 60));
+    drawHand(ctx, minute, radius * 0.8, radius * 0.07);
+    // second
+    second = (second * Math.PI / 30);
+    drawHand(ctx, second, radius * 0.9, radius * 0.02);
+}
+
+function drawHand(ctx, pos, length, width) {
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = "round";
+    ctx.moveTo(0, 0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
+}
+});
+                </script>
+    <body>
+            <header>
+            <div class="menu-btn">
+                <span class="menu-btn_buger"></span>
+            </div>
+            <nav class="menu">
+                <ul class="menu-nav">
+                    <li class="menu-nav_item active">
+                        <a href="https://multireligionvalsystem.eu.org/Conflict-resolution-model/index.html" class="menu-nav_link">Home</a>
+                    </li>
+                    <li class="menu-nav_item">
+                        <a href="https://multireligionvalsystem.eu.org/Conflict-resolution-model/uländernas-ccTLDs.html" class="menu-nav_link">Fattiga ländernas ccTLDs</a>
+                    </li>
+                    <li class="menu-nav_item">
+                        <a href="https://multireligionvalsystem.eu.org/Conflict-resolution-model/ennyflaggdesign.html" class="menu-nav_link">En ny flaggdesign</a>
+                    </li>
+         </li>
+                    <li class="menu-nav_item">
+                        <a href="https://multireligionvalsystem.eu.org/EU" class="menu-nav_link"><a href="https://multireligionvalsystem.eu.org/EU/" title="EU-reform">EU-reform</a></a>
+                    </li>
+                    <li class="menu-nav_item">
+                        <a href="https://multireligionvalsystem.eu.org/" class="menu-nav_link"><a href="https://multireligionvalsystem.eu.org/Tre-reformer-som-f%C3%B6r%C3%A4ndrar-v%C3%A4rlden/" title="Tre reformer som förändrar världen">Konfliktlösningsmodell</a></a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section class="home">
+                <h2>Multireligionval (MRE)</h2> <img src="https://multireligionvalsystem.eu.org/Conflict-resolution-model/fredsavtalen.webp" width="500" height="500" alt="Fred">
+                <br>FDU: <a href="https://rfp.multireligionvalsystem.eu.org/rfp-rekvisit" title="Om Konfliktlösningsmodell">unikt konfliktlösningsningsmodellskoncept</a>
+                <h1 class="home_name">Konflikt<a href="https://multireligionvalsystem.eu.org/Conflict-resolution-model"><span class="home_name-last">lösningsmodell</span></h1>
+                <h2><h1 class="section_title center"><p style="text-align: left"></p><span style="color: #CC4311"><span style="color: #CC2309"><p style="text-shadow: 4px 4px 2px rgba(50,55,60, 0.8);"><a href="https://multireligionvalsystem.eu.org/How-to-solve-a-most-complex-and-controversial-issues-in-the-world/" title="How-to-solve-a-most-complex-and-controversial-issues-in-the-world">How to solve a most complex and controversial issues in the world</a>,<a href="https://a-multi-religion-election-system.multireligionvalsystem.eu.org/den-judisk-kristna-politiska-alliansen/" title="den-judisk-kristna-politiska-alliansen">the Israel-Palestine conflict</a> </h1></h2>
+
+                <div class="social-icons">
+                    <a href="https://twitter.com/DPNS">
+                        <i class="fab fa-twitter fa-xl"></i>
+                    </a>
+                    <a href="https://facebook.com/demokratin">
+                        <i class="fab fa-facebook fa-xl"></i>
+                    </a>
+                    <a href="https://instagram.com/denyasvenskarna/">
+                        <i class="fab fa-instagram fa-xl"></i>
+                    </a>
+                    <a href="https://tiktok.com/@multireligionvalsystem">
+                        <i class="fab fa-tiktok fa-xl"></i>
+                    </a>
+                </div>
+                    <br>
+                <footer>&copy; Copyright 1998-2023</footer>
+            </section>
+        </main>
+
+        <script src="https://multireligionvalsystem.eu.org/Conflict-resolution-model/dist/js/main.js"></script>
+               <script>
+window.embeddedChatbotConfig = {
+chatbotId: "loFwyQ-7EdvPjWjn7QsPc",
+domain: "www.chatbase.co"
+}
+</script>
+
+</div>
+                          </div>
+
+                <script src="https://multireligionvalsystem.eu.org/eu-medborgarinitiativ/popper.min.js"></script>
+                <script src="https://multireligionvalsystem.eu.org/eu-medborgarinitiativ/bootstrap.min.js"></script>
+           <div class="pd-embed" id="pd_1709594296107"></div>
+<script type="text/javascript">
+var _polldaddy = [] || _polldaddy;
+
+_polldaddy.push( {
+    type: 'slider',
+    title: 'Take Our Survey!',
+    body: 'We start from the principle that it is democracy that has given all religious communities freedom of religion, and that democracy be introduced in all religions, without exception.',
+        button: 'Get Started &raquo;',
+        domain: 'denyasvenskarna.survey.fm',
+        id: 'untitled-survey',
+        placeholder: 'pd_1709594296107'
+} );
+
+(function(d,c,j){if(!document.getElementById(j)){var pd=d.createElement(c),s;pd.id=j;pd.src='https://app.crowdsignal.com/survey.js';s=document.getElementsByTagName(c)[0];s.parentNode.insertBefore(pd,s);}}(document,'script','pd-embed'));
+</script>
+<noscript><a href="https://denyasvenskarna.survey.fm/untitled-survey">Delta i vår opinionsundesökning ?</a></noscript>
+        <script>
+window.embeddedChatbotConfig = {
+chatbotId: "loFwyQ-7EdvPjWjn7QsPc",
+domain: "www.chatbase.co"
+}
+</script>
+<script
+src="https://www.chatbase.co/embed.min.js"
+chatbotId="loFwyQ-7EdvPjWjn7QsPc"
+domain="www.chatbase.co"
+defer>
+</script>
+<iframe frameborder="0" width="100%" height="600" scrolling="auto" allowtransparency="true" src="https://denyasvenskarna.survey.fm/political-practices-in-exile?iframe=1"><a href="https://denyasvenskarna.survey.fm/political-practices-in-exile">View Survey</a></iframe>
+
+
+            <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"93875c54b8b6930c","version":"2025.4.0-1-g37f21b1","r":1,"token":"90fdef7da9c745b9921b35c565174988","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}' crossorigin="anonymous"></script>
+
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"90fdef7da9c745b9921b35c565174988","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'989f2bfe8f75902d',t:'MTc1OTY5MDkzMA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"90fdef7da9c745b9921b35c565174988","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<br><a href="https://political-practices-in-exile.multireligionvalsystem.eu.org/" title="https://community.multireligionvalsystem.eu.org/ - Follow me on
+political practices in exile">Multireligionvalsystem (MRES) -political practices in exile</a>
+     <br><a href="https://political-practices-in-exile.multireligionvalsystem.eu.org/" title="https://community.multireligionvalsystem.eu.org/ - Follow me on
+political practices in exile">Multireligionvalsystem(MRES) -political practices in exile</a>
+
+<br><a href="https://ed.ted.com/on/IQxJEZDa/" title="https://multireligionvalsystem.eu.org/ - Follow me on
+TE Education">Om Multireligionvalsystem -tillämpning av Multireligionvalsystem</a>
+
+<br><a href="https://ed.ted.com/on/Qf8GyN3m/" title="https://frc.multireligionvalsystem.eu.org/ - Follow me on
+political practices in exile">Multireligionvalsystem -political practices in exile</a>
+
+<br><a href="https://vocal.media/education/how-to-solve-a-most-complex-and-controversial-issues-in-the-world
+utbildning/politik-och-religion/" title="https://multireligionvalsystem.eu.org/ - Follow me on
+vocal.media education">Om Multireligionvalsystem (MRES) -tillämpning av Multireligionvalsystem (MRES)</a>
+
+<br><a href="https://multireligionvalsystem.eu.org/folkmord/The-International-Criminal-Tribunal-for-Israel-ICTI.html/" title="https://fdu.multireligionvalsystem.eu.org/ - Follow me on
+political practices in exile-online kurser i politik">Multireligionvalsystem -political practices in exile</a>
+<a href="https://multireligionvalsystem.eu.org/Conflict-resolution-model/">
+  Multireligionva är en Konfliktlösningsmodell 
+</a>
+
+<a href="https://multireligionvalsystem.eu.org/Conflict-resolution-model/">
+  A fair conflict resolution model for all faiths-Inter-Religious Dialogue
+</a>
+
+<a href="https://multireligionvalsystem.eu.org/Conflict-resolution-model/">
+  Read our conflict resolution model for multi-religious elections
+</a>
+
+<a href="https://multireligionvalsystem.eu.org/Conflict-resolution-model/">
+  Reformist conflict resolution model for a multi-religious election system
+</a>
+
+<a href="https://multireligionvalsystem.eu.org/Conflict-resolution-model/">
+  Democratic conflict resolution for peaceful multi-religious elections
+</a>
+
+<a href="https://multireligionvalsystem.eu.org/Conflict-resolution-model/">
+  Ensuring fair and peaceful elections in a multi-religious democracy
+</a>
+<a href="https://multireligionvalsystem.eu.org/Conflict-resolution-model/">
+  A reformist, cross-party model for resolving conflicts in multi-religious elections
+</a>
+<iframe src="https://multireligionvalsystem.eu.org/Conflict-resolution-model/" 
+       width="800" height="600" frameborder="0">
+</iframe>
+         <div style="text-align: center; padding: 40px; background: #f0f0f0;">
+  <h2>🗳️ Share Your View on Religious Democracy</h2>
+  <p>Nordic countries allow 16-year-olds to vote in church elections.
+  What do you think?</p>
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf5uy5moGGPRhuUFPIv-bELS9UF3hyUjLjjIwMZAvujHv42GQ/viewform?usp=header"
+          width="640" height="800" frameborder="0">
+  </iframe>
+               <div class="csl-entry"><i>https://multireligionvalsystem.eu.org/Topp-konfliktlosningsmodell.html</i>. (n.d.).</div>
+(<i>https://Multireligionvalsystem.Eu.Org/Topp-Konfliktlosningsmodell.html</i>, n.d.)
+        <footer>
+  <div class="footer-links">
+    <h4>Our Services</h4>
+    <ul>
+      <li><a href="https://multireligionvalsystem.eu.org/">Main Site</a></li>
+      <li><a href="https://clawdbot.multireligionvalsystem.eu.org">Clawdbot AI</a></li>
+      <li><a href="https://mres.multireligionvalsystem.eu.org/the%20Israel%E2%80%93Palestine%20conflict.html/">Political Alliance</a></li>
+    </ul>
+  </div>
+       <div class="footer-links">
+    <h4>Our Network</h4>
+    <ul>
+      <li><a href="https://multireligionvalsystem.eu.org">Religion Comparisons</a></li>
+      <li><a href="https://multireligionvalsystem.eu.org/Conflict-resolution-model/ennyflaggdesign.html">Political conflict resolution model-en ny flaggdesign</a></li>
+                <li><a href="https://multireligionvalsystem.eu.org/What-is-a-MRES.html">Vad är MRES ?</a></li>
+        <li><a href="https://multireligionvalsystem.eu.org/Politisk-Ideologi-utan-multireligionvalsystem-ar-icke-en-demokratisk-ideologi/">Vad är multireligionval ?</a></li>
+ 
+        <li><a href="https://a-multi-religion-election.multireligionvalsystem.eu.org/ofullbordade-separationen-stat-kyrka-religion-politik.html">ofullbordade-separationen-stat-kyrka-religion-politi</a></li>
+        <li><a href="https://clawdbot.multireligionvalsystem.eu.org">Clawdbot AI</a></li>
+    </ul>
+  </div>       
+</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
