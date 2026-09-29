@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support the EU Citizen Initiative | Multi-Religion Election System</title>
+    <meta name="description" content="Help bring the Multi-Religion Election System (MRES) to the European Parliament. Support our EU Citizen Initiative for democratic reform.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --color-navy: #0f2a4a;
+            --color-navy-dark: #081a30;
+            --color-gold: #c9a961;
+            --color-gold-dark: #a88a4a;
+            --color-bg: #ffffff;
+            --color-bg-soft: #f7f9fc;
+            --color-text: #1a2332;
+            --color-text-muted: #5a6577;
+            --color-border: #e2e8f0;
+            --color-eu-blue: #003399;
+            --color-eu-gold: #ffcc00;
+            --shadow-sm: 0 1px 3px rgba(15, 42, 74, 0.08);
+            --shadow-md: 0 4px 12px rgba(15, 42, 74, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--color-text);
+            background: var(--color-bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--color-navy);
+        }
+
+        a {
+            color: var(--color-navy);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--color-gold-dark);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .site-header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--color-border);
+            background: var(--color-bg);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Fraunces', serif;
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--color-navy);
+        }
+
+        .logo span {
+            color: var(--color-gold);
+        }
+
+        .back-link {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            font-weight: 500;
+        }
+
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--color-eu-blue) 0%, var(--color-navy) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto 32px;
+        }
+
+        .eu-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 32px;
+            background: var(--color-gold);
+            color: var(--color-navy);
+            font-weight: 700;
+            font-size: 1.05rem;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            box-shadow: var(--shadow-md);
+        }
+
+        .cta-button:hover {
+            background: var(--color-gold-dark);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(201, 169, 97, 0.3);
+        }
+
+        .content-section {
+            padding: 80px 0;
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .content-section p {
+            font-size: 1.05rem;
+            color: var(--color-text-muted);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .why-section {
+            background: var(--color-bg-soft);
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .benefit-card {
+            padding: 32px 28px;
+            background: white;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .benefit-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--color-gold);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .benefit-card p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        .how-section {
+            background: white;
+        }
+
+        .steps-list {
+            max-width: 700px;
+            margin: 40px auto 0;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 40px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            background: var(--color-navy);
+            color: white;
+            font-weight: 700;
+            font-size: 1.3rem;
+            line-height: 48px;
+            text-align: center;
+            border-radius: 50%;
+        }
+
+        .step-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .step-content p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        .final-cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-dark) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            color: white;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .final-cta p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .site-footer {
+            padding: 32px 0;
+            background: var(--color-navy-dark);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 0;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .step-item {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="https://www.multireligionvalsystem.eu.org/" class="logo">
+                De Nya <span>Svenskarna</span>
+            </a>
+            <a href="https://www.multireligionvalsystem.eu.org/" class="back-link">
+                ← Back to Main Site
+            </a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="eu-badge">
+                🇪🇺 European Citizen Initiative
+            </div>
+            <h1>Bring Democratic Reform to the European Parliament</h1>
+            <p class="hero-subtitle">
+                Support our initiative to introduce the Multi-Religion Election System (MRES) as a framework for inclusive, secular governance across Europe.
+            </p>
+            <a href="#how-to-support" class="cta-button">Support the Initiative →</a>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2>Why This Initiative Matters</h2>
+            <p>
+                Across Europe, religious communities face a fundamental challenge: how to ensure equitable representation in democratic governance without compromising the secular nature of the state. Current systems often force a choice between marginalization or the entanglement of religion and partisan politics.
+            </p>
+            <p>
+                The Multi-Religion Election System (MRES) offers a proven, scalable solution. Inspired by the Nordic model of democratic church elections, MRES creates a dedicated, parallel avenue for religious representation—the Faith Representatives Chamber—ensuring all faith communities have an equitable voice while maintaining strict separation from secular politics.
+            </p>
+            <p>
+                <strong>This initiative seeks to bring the MRES framework to the European Parliament for formal consideration and adaptation across EU member states.</strong>
+            </p>
+        </div>
+    </section>
+
+    <section class="content-section why-section">
+        <div class="container">
+            <h2>What This Achieves</h2>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚖️</div>
+                    <h3>True Secular Governance</h3>
+                    <p>Ensures religious parties cannot participate in secular parliamentary elections, maintaining the fundamental separation of church and state.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤝</div>
+                    <h3>Inclusive Representation</h3>
+                    <p>Guarantees equitable representation for all recognized faith communities, including minorities and marginalized groups.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🕊️</div>
+                    <h3>Long-Term Peacebuilding</h3>
+                    <p>Provides an institutional framework to resolve deep-rooted conflicts by addressing religious representation and power-sharing at their core.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">📊</div>
+                    <h3>Democratic Integrity</h3>
+                    <p>Strengthens democratic institutions by creating clear, transparent channels for faith-based dialogue without partisan interference.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section how-section" id="how-to-support">
+        <div class="container">
+            <h2>How You Can Support</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto;">
+                Your support is crucial to bringing this initiative to the European Parliament. Here's how you can help:
+            </p>
+
+            <div class="steps-list">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Sign the Petition</h3>
+                        <p>Add your name to our growing list of supporters. Every signature demonstrates public demand for democratic reform and inclusive governance.</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Share with Your Network</h3>
+                        <p>Forward this page to colleagues, community leaders, academics, and anyone interested in democratic reform, interfaith dialogue, or peacebuilding.</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Contact Your MEP</h3>
+                        <p>Write to your Member of the European Parliament and ask them to support the MRES framework. We can provide you with a template letter.</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Organize a Local Event</h3>
+                        <p>Host a discussion group, webinar, or community meeting to raise awareness about the MRES model. We'll provide materials and support.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to Make Your Voice Heard?</h2>
+            <p>Join thousands of citizens, leaders, and policymakers who recognize that true democracy requires innovative, inclusive models like MRES.</p>
+            <a href="mailto:info@multireligionvalsystem.eu.org?subject=I%20want%20to%20support%20the%20EU%20Citizen%20Initiative" class="cta-button">
+                Sign the Petition & Get Involved →
+            </a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            © 2026 De Nya Svenskarna. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
