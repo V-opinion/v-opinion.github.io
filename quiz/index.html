@@ -1,0 +1,517 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Multireligion Solves 77 Years of Politics Quiz</title>
+    <style>
+        @page {
+            margin: 0.75in 1.5in;
+            size: letter;
+        }
+        
+        @media print {
+            body { 
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .no-print { display: none !important; }
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-size: 11pt;
+            line-height: 1.5;
+            color: #000000;
+            margin: 0 1.5in;
+            padding: 0;
+            background: white;
+        }
+        
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #000000;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 20pt;
+            font-weight: 700;
+            margin: 0 0 15px 0;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: #000000;
+        }
+        
+        .header-info {
+            font-size: 10pt;
+            color: #333333;
+            margin: 5px 0;
+        }
+        
+        .answer-key-banner {
+            background-color: #000000;
+            color: white;
+            padding: 12px;
+            margin: 15px 0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 12pt;
+            border: 2px solid #000000;
+            letter-spacing: 1px;
+        }
+        
+        .student-info {
+            border: 1px solid #000000;
+            padding: 15px;
+            margin-bottom: 25px;
+            background-color: #fafafa;
+        }
+        
+        .student-info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 10pt;
+        }
+        
+        .student-info-row:last-child {
+            margin-bottom: 0;
+        }
+        
+        .underline {
+            border-bottom: 1px solid #000000;
+            display: inline-block;
+            min-width: 200px;
+            margin-left: 10px;
+        }
+
+        .question-block {
+            margin-bottom: 30px;
+            page-break-inside: avoid;
+        }
+        
+        /* Enhanced spacing for different question types */
+        .question-block.essay {
+            margin-bottom: 40px;
+        }
+        
+        .question-block.short-answer {
+            margin-bottom: 35px;
+        }
+        
+        .question-number-and-text {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .question-number {
+            font-weight: bold;
+            font-size: 16pt;
+            color: #000000;
+            margin-right: 8px;
+            flex-shrink: 0;
+        }
+        
+        .question-text {
+            font-size: 16pt;
+            line-height: 1.6;
+            color: #000000;
+            font-weight: bold;
+            flex: 1;
+        }
+        
+        .options-container {
+            margin-left: 10px;
+            margin-top: 12px;
+        }
+        
+        .option {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            font-size: 13pt;
+            line-height: 1.4;
+            padding: 5px 0;
+        }
+        
+        .option-marker {
+            width: 14px;
+            height: 14px;
+            border: 1.5px solid #000000;
+            border-radius: 50%;
+            margin-right: 12px;
+            margin-top: 3px;
+            flex-shrink: 0;
+            background-color: white;
+        }
+        
+        .option-letter {
+            font-weight: bold;
+            margin-right: 8px;
+            min-width: 15px;
+            color: #000000;
+        }
+        
+        .option-text {
+            flex: 1;
+            color: #000000;
+        }
+        
+        .correct-marker {
+            background-color: #000000 !important;
+        }
+        
+        .correct-option {
+            background-color: #f5f5f5 !important;
+            border: 1px solid #000000 !important;
+            padding: 8px 12px !important;
+            margin: 5px 0 !important;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        
+        /* Answer space for essay and short answer questions */
+        .answer-space {
+            margin-top: 20px;
+            margin-left: 10px;
+            border-top: 1px solid #cccccc;
+            padding-top: 15px;
+        }
+        
+        .answer-space.essay {
+            min-height: 200px;
+            background-image: repeating-linear-gradient(
+                transparent,
+                transparent 24px,
+                #e0e0e0 24px,
+                #e0e0e0 25px
+            );
+        }
+        
+        .answer-space.short-answer {
+            min-height: 80px;
+            background-image: repeating-linear-gradient(
+                transparent,
+                transparent 24px,
+                #e0e0e0 24px,
+                #e0e0e0 25px
+            );
+        }
+        
+        .answer-space-label {
+            font-size: 9pt;
+            color: #666666;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+        
+        /* Answer key styles for text responses */
+        .answer-key-response {
+            margin-top: 15px;
+            margin-left: 10px;
+            padding: 15px;
+            background-color: #f0f8ff;
+            border-left: 4px solid #000000;
+            border-radius: 3px;
+        }
+        
+        .answer-key-response h4 {
+            margin: 0 0 10px 0;
+            font-size: 11pt;
+            color: #000000;
+            font-weight: bold;
+        }
+        
+        .answer-key-response p {
+            margin: 0;
+            font-size: 10pt;
+            line-height: 1.4;
+            color: #333333;
+        }
+
+        /* Clean artifact styles */
+        .artifact-content {
+            margin: 20px 0;
+            page-break-inside: avoid;
+        }
+        
+        .artifact-body {
+            background-color: white;
+        }
+        
+        .artifact-body pre {
+            background-color: #f8f8f8;
+            padding: 15px;
+            border: 1px solid #dddddd;
+            font-family: 'Courier New', monospace;
+            font-size: 9pt;
+            line-height: 1.4;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            color: #000000;
+        }
+        
+        .artifact-text-content {
+            font-style: italic;
+            line-height: 1.6;
+            padding: 15px;
+            background-color: white;
+            border-left: 4px solid #000000;
+            color: #000000;
+        }
+        
+        .artifact-interactive-placeholder {
+            text-align: center;
+            padding: 25px;
+            background-color: white;
+            border: 1px solid #cccccc;
+            color: #666666;
+            font-size: 10pt;
+        }
+        
+        .artifact-molecular {
+            font-family: 'Courier New', monospace;
+            background-color: white;
+            padding: 15px;
+            border: 1px solid #cccccc;
+            font-size: 10pt;
+            color: #000000;
+        }
+        
+        .artifact-generic {
+            padding: 15px;
+            background-color: white;
+            border: 1px solid #cccccc;
+            color: #000000;
+        }
+        
+        .plotly-container {
+            margin: 20px auto;
+            text-align: center;
+            page-break-inside: avoid;
+            width: 50%;
+        }
+        
+        .plotly-chart {
+            width: 100%;
+            height: 350px;
+            background-color: white;
+            margin: 0 auto;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #cccccc;
+            text-align: center;
+            font-size: 9pt;
+            color: #666666;
+        }
+        
+        /* Spacing improvements */
+        .question-block:last-child {
+            margin-bottom: 20px;
+        }
+        
+        /* Print optimizations */
+        @media print {
+            body {
+                font-size: 10pt;
+            }
+            
+            .header h1 {
+                font-size: 18pt;
+            }
+            
+            .question-block {
+                margin-bottom: 25px;
+            }
+            
+            .question-block.essay {
+                margin-bottom: 35px;
+            }
+            
+            .question-block.short-answer {
+                margin-bottom: 30px;
+            }
+            
+            .artifact-content {
+                margin: 15px 0;
+                padding: 15px;
+            }
+            
+            .answer-space.essay {
+                min-height: 180px;
+            }
+            
+            .answer-space.short-answer {
+                min-height: 70px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Multireligion Solves 77 Years of Politics Quiz</h1>
+            
+            <div class="header-info">Generated on February 22, 2026</div>
+            <div class="header-info">5 Questions • Medium Level • None</div>
+        </div>
+        
+        
+        <div class="student-info">
+            <div class="student-info-row">
+                <span><strong>Name:</strong><span class="underline"></span></span>
+                <span><strong>Date:</strong><span class="underline"></span></span>
+            </div>
+            <div class="student-info-row">
+                <span><strong>Class:</strong><span class="underline"></span></span>
+                <span><strong>Score:</strong><span class="underline"></span></span>
+            </div>
+        </div>
+        <div class="question-block">
+            <div class="question-number-and-text">
+                <div class="question-number">1.</div>
+                <div class="question-text">Varför FN-resolutioner, amerikanska presidenter, nobelpristagare eller till och med påvar misslyckats med att lösa den 77 år långa konflikten mellan Israel och Palestina så att den har fått överlämnas från den ena genearationen till den andra vilket lett till forkmord .</div>
+            </div><div class="options-container">
+                <div class="option">
+                    <div class="option-marker"></div>
+                    <span class="option-letter">A.</span>
+                    <span class="option-text">The incomplete separation between church and state and between religion and politics </span>
+                </div>
+                <div class="option">
+                    <div class="option-marker"></div>
+                    <span class="option-letter">B.</span>
+                    <span class="option-text"> Israeli extremists assassinate Nobel Peace Prize winner , primärminister, och jude Yitzhak Rabin som deltog i Oslo-avtalt? </span>
+                </div>
+                <div class="option">
+                    <div class="option-marker"></div>
+                    <span class="option-letter">C.</span>
+                    <span class="option-text">Den judiska-kristna politiska alliansen</span>
+                </div>
+                <div class="option">
+                    <div class="option-marker"></div>
+                    <span class="option-letter">D.</span>
+                    <span class="option-text">Kräver reform av FN och EU samt demokratisera alla religioner genom att reformera kyrkovalet  </span>
+                </div></div></div>
+        <div class="question-block">
+            <div class="question-number-and-text">
+                <div class="question-number">2.</div>
+                <div class="question-text">A system displays symbols of global cooperation (e.g., globe/chain link) but consistently fails to resolve conflicts. What does this failure imply about the operationalization of the cooperative mechanisms these symbols represent?</div>
+            </div><div class="options-container">
+                <div class="option">
+                    <div class="option-marker"></div>
+                    <span class="option-letter">A.</span>
+                    <span class="option-text">The symbols themselves are invalid and misleading.</span>
+                </div>
+                <div class="option">
+                    <div class="option-marker"></div>
+                    <span class="option-letter">B.</span>
+                    <span class="option-text">The cooperative mechanisms were not effectively applied or were blocked in practice.</span>
+                </div>
+                <div class="option">
+                    <div class="option-marker"></div>
+                    <span class="option-letter">C.</span>
+                    <span class="option-text">The symbols are irrelevant to the system's conflict resolution function.</span>
+                </div>
+                <div class="option">
+                    <div class="option-marker"></div>
+                    <span class="option-letter">D.</span>
+                    <span class="option-text">The system's goal of conflict resolution is inherently impossible to achieve.</span>
+                </div></div></div>
+        <div class="question-block">
+            <div class="question-number-and-text">
+                <div class="question-number">3.</div>
+                <div class="question-text">When a specific geopolitical issue like the Israel/Palestine conflict remains unresolved, what is the fundamental analytical error in concluding that the UN's General Mandate to promote peace has failed?</div>
+            </div><div class="options-container">
+                <div class="option">
+                    <div class="option-marker"></div>
+                    <span class="option-letter">A.</span>
+                    <span class="option-text">Confusing the UN Security Council's specific resolutions with the General Assembly's broad policy statements.</span>
+                </div>
+                <div class="option">
+                    <div class="option-marker"></div>
+                    <span class="option-letter">B.</span>
+                    <span class="option-text">Conflating the system's theoretical operational space with its capacity to execute under specific, constrained boundary conditions.</span>
+                </div>
+                <div class="option">
+                    <div class="option-marker"></div>
+                    <span class="option-letter">C.</span>
+                    <span class="option-text">Correctly identifying that the General Mandate is merely a theoretical guideline, not a binding operational directive.</span>
+                </div>
+                <div class="option">
+                    <div class="option-marker"></div>
+                    <span class="option-letter">D.</span>
+                    <span class="option-text">Failing to recognize that the General Mandate itself is fundamentally flawed and incapable of promoting peace.</span>
+                </div></div></div>
+        <div class="question-block">
+            <div class="question-number-and-text">
+                <div class="question-number">4.</div>
+                <div class="question-text">A geopolitical issue has persisted for 77 years despite a clear UN mandate to resolve it. According to the process analysis of system efficacy, which step is most likely compromised, assuming the mandate itself is sound?</div>
+            </div><div class="options-container">
+                <div class="option">
+                    <div class="option-marker"></div>
+                    <span class="option-letter">A.</span>
+                    <span class="option-text">Step 2: Identifying the system input (political will)</span>
+                </div>
+                <div class="option">
+                    <div class="option-marker"></div>
+                    <span class="option-letter">B.</span>
+                    <span class="option-text">Step 1: Defining the success metric (resolution of conflict)</span>
+                </div>
+                <div class="option">
+                    <div class="option-marker"></div>
+                    <span class="option-letter">C.</span>
+                    <span class="option-text">Step 3: Measuring the system output (lack of resolution)</span>
+                </div>
+                <div class="option">
+                    <div class="option-marker"></div>
+                    <span class="option-letter">D.</span>
+                    <span class="option-text">Step 4: Analyzing external environmental factors</span>
+                </div></div></div>
+        <div class="question-block">
+            <div class="question-number-and-text">
+                <div class="question-number">5.</div>
+                <div class="question-text">Which statement accurately characterizes the relationship between the acronym "FN" and the official English designation "UN"?</div>
+            </div><div class="options-container">
+                <div class="option">
+                    <div class="option-marker"></div>
+                    <span class="option-letter">A.</span>
+                    <span class="option-text">It is the Swedish translation of the official English acronym.</span>
+                </div>
+                <div class="option">
+                    <div class="option-marker"></div>
+                    <span class="option-letter">B.</span>
+                    <span class="option-text">It is an alternative English acronym that has become widely accepted.</span>
+                </div>
+                <div class="option">
+                    <div class="option-marker"></div>
+                    <span class="option-letter">C.</span>
+                    <span class="option-text">It represents a different, related organization within the UN system.</span>
+                </div>
+                <div class="option">
+                    <div class="option-marker"></div>
+                    <span class="option-letter">D.</span>
+                    <span class="option-text">It is a typographical error frequently found in informal documentation.</span>
+                </div></div></div>
+        <div class="footer">
+            <div>End of Quiz</div>
+        </div>
+    </div>
+</body>
+</html>
