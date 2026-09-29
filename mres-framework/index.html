@@ -591,26 +591,21 @@
                     <h2>Get Instant Access</h2>
                     <p class="form-subtitle">Enter your details below and we'll send the complete PDF guide directly to your inbox.</p>
 
-                    <!-- 
-                        =====================================================
-                        FORM INTEGRATION INSTRUCTIONS:
-                        =====================================================
-                        Replace the form action below with your email service
-                        endpoint. Options:
-                        
-                        1. Formspree (easiest): 
-                           action="https://formspree.io/f/mvkglwpq"
-                           Sign up free at formspree.io
-                           
-                        2. Mailchimp: Use their embedded form code
-                           
-                        3. ConvertKit / HubSpot / Brevo: 
-                           Paste their provided form HTML here
-                           
-                        4. Custom backend:
-                           action="/api/subscribe" method="POST"
-                        =====================================================
-                    -->
+                  <form
+  action="https://formspree.io/f/mvkglwpq"
+  method="POST"
+>
+  <label>
+    Your email:
+    <input type="email" name="email">
+  </label>
+  <label>
+    Your message:
+    <textarea name="message"></textarea>
+  </label>
+  <!-- your other form fields go here -->
+  <button type="submit">Send</button>
+</form>
                     <form id="lead-form" action="#" method="POST">
                         <div class="form-group">
                             <label for="first-name">First Name</label>
