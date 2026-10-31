@@ -81,3 +81,17 @@
 <priority>0.5</priority>
 </url>
 </urlset>
+<url>
+    <loc>https://dpns.multireligionvalsystem.eu.org/</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- NEW BLOG POST ENTRY -->
+  <url>
+    <loc>https://dpns.multireligionvalsystem.eu.org/sekularisering</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
