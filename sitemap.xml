@@ -1,97 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>https://www.multireligionvalsystem.eu.org/</loc>
-<lastmod>2025-01-15</lastmod>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>https://www.multireligionvalsystem.eu.org/folkmord/</loc>
-<lastmod>2025-01-15</lastmod>
-<priority>0.9</priority>
-</url>
-<url>
-<loc>https://www.multireligionvalsystem.eu.org/Conflict-resolution-model/</loc>
-<lastmod>2025-01-15</lastmod>
-<priority>0.9</priority>
-</url>
-<url>
-<loc>https://www.multireligionvalsystem.eu.org/FRED/</loc>
-<lastmod>2025-01-15</lastmod>
-<priority>0.9</priority>
-</url>
-<url>
-<loc>https://www.multireligionvalsystem.eu.org/FAQ/</loc>
-<lastmod>2025-01-15</lastmod>
-<priority>0.9</priority>
-</url>
-<url>
-<loc>https://www.multireligionvalsystem.eu.org/about.html</loc>
-<lastmod>2025-01-15</lastmod>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://www.multireligionvalsystem.eu.org/researchers.html</loc>
-<lastmod>2025-01-15</lastmod>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://www.multireligionvalsystem.eu.org/EU/</loc>
-<lastmod>2025-01-15</lastmod>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://www.multireligionvalsystem.eu.org/articles/</loc>
-<lastmod>2025-01-15</lastmod>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://www.multireligionvalsystem.eu.org/What-is-a-multi-religion-election-system.html</loc>
-<lastmod>2025-01-15</lastmod>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://www.multireligionvalsystem.eu.org/How-to-Implement-a-Multi-Religion-Electoral-System-A-Step-by-Step-Guide/</loc>
-<lastmod>2025-01-15</lastmod>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://www.multireligionvalsystem.eu.org/How-to-solve-a-most-complex-and-controversial-issues-in-the-world/</loc>
-<lastmod>2025-01-15</lastmod>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://www.multireligionvalsystem.eu.org/Overview-of-the-Four-Major-Religions.html</loc>
-<lastmod>2025-01-15</lastmod>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://www.multireligionvalsystem.eu.org/tillampning-av-MRES.html</loc>
-<lastmod>2025-01-15</lastmod>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://www.multireligionvalsystem.eu.org/Political-Practices-in-Exile/</loc>
-<lastmod>2025-01-15</lastmod>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://www.multireligionvalsystem.eu.org/comparison/hinduism-vs-buddhism</loc>
-<lastmod>2025-01-15</lastmod>
-<priority>0.5</priority>
-</url>
-</urlset>
-<url>
+  <url>
+    <loc>https://www.multireligionvalsystem.eu.org/</loc>
+    <lastmod>2025-01-15</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.multireligionvalsystem.eu.org/folkmord/</loc>
+    <lastmod>2025-01-15</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.multireligionvalsystem.eu.org/Conflict-resolution-model/</loc>
+    <lastmod>2025-01-15</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.multireligionvalsystem.eu.org/FRED/</loc>
+    <lastmod>2025-01-15</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.multireligionvalsystem.eu.org/FAQ/</loc>
+    <lastmod>2025-01-15</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.multireligionvalsystem.eu.org/about.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.multireligionvalsystem.eu.org/researchers.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.multireligionvalsystem.eu.org/EU/</loc>
+    <lastmod>2025-01-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.multireligionvalsystem.eu.org/articles/</loc>
+    <lastmod>2025-01-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.multireligionvalsystem.eu.org/What-is-a-multi-religion-election-system.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.multireligionvalsystem.eu.org/How-to-Implement-a-Multi-Religion-Electoral-System-A-Step-by-Step-Guide/</loc>
+    <lastmod>2025-01-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.multireligionvalsystem.eu.org/How-to-solve-a-most-complex-and-controversial-issues-in-the-world/</loc>
+    <lastmod>2025-01-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.multireligionvalsystem.eu.org/Overview-of-the-Four-Major-Religions.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.multireligionvalsystem.eu.org/tillampning-av-MRES.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.multireligionvalsystem.eu.org/Political-Practices-in-Exile/</loc>
+    <lastmod>2025-01-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.multireligionvalsystem.eu.org/comparison/hinduism-vs-buddhism</loc>
+    <lastmod>2025-01-15</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <!-- Subdomain / Blog Entries -->
+  <url>
     <loc>https://dpns.multireligionvalsystem.eu.org/</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- NEW BLOG POST ENTRY -->
   <url>
     <loc>https://dpns.multireligionvalsystem.eu.org/sekularisering</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+</urlset>
