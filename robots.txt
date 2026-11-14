@@ -39,6 +39,13 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
+# Block standard WordPress / CMS admin and internal search pages to save crawl budget
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+Disallow: /?s=
+Disallow: /search/
+
+# Point search engine crawlers to the XML sitemap
 Sitemap: https://www.multireligionvalsystem.eu.org/sitemap.xml
 
 
