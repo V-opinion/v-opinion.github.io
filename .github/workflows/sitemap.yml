@@ -1,30 +1,41 @@
-name: Generate Sitemap automatically
+name: Generate and Update Sitemap
 
 on:
   push:
     branches:
-      - main
-    paths:
-      - '**.md' # Only runs when Markdown files are added or updated
+      - main  # Change to 'master' if your default branch is master
+  workflow_dispatch: # Allows you to trigger it manually from GitHub Actions tab
 
 jobs:
   sitemap:
+  # Sets permissions required to commit changes back to the repository
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          python-version: '3.x'
+          node-version: '20'
 
-      - name: Run Sitemap Generator
-        run: python generate_sitemap.py
+      - name: Run Sitemap Generator Script
+        run: node generate-sitemap.js
 
-      - name: Commit and Push Sitemap
+      - name: Commit and Push Sitemap if Changed
         run: |
           git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add sitemap.xml
-          git diff --quiet && git diff --staged --quiet || (git commit -m "auto: Update sitemap.xml" && git push)
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          # Check if public/sitemap.xml has changed
+          git add public/sitemap.xml
+          
+          if git diff --staged --quiet; then
+            echo "No changes to sitemap.xml to commit."
+          else
+            git commit -m "chore: auto-generate sitemap.xml [skip ci]"
+            git push
+          >
