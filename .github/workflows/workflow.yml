@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Build and Deploy Sitemap & Site
 
 on:
   push:
@@ -13,6 +13,9 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -22,9 +25,8 @@ jobs:
         with:
           node-version: '20'
 
-      # 1. Run your sitemap generator script automatically on every build!
       - name: Generate Sitemap
-        run: node name-of-your-script.js  # Replace with your script's actual filename (e.g., sitemap.js)
+        run: node generate-sitemap.js
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -32,7 +34,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'  # Uploads your root folder, including the newly generated sitemap.xml
+          path: '.'
 
       - name: Deploy to GitHub Pages
         id: deployment
