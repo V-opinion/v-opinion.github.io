@@ -1,37 +1,41 @@
-name: CI
-on: [push]
-jobs:
-  test-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Run linters / tests
-        run: |
-          npm ci
-          npm run lint
-          npm run test
-      - name: Build
-        run: npm run build
-      - name: Deploy to staging
-        uses: appleboy/scp-action@v0.1.0
-        with:
-          host: ${{ secrets.STAGING_HOST }}
-          username: ${{ secrets.DEPLOY_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          source: "dist/*"
-          target: "/var/www/staging/"
-name: Deploy site
+name: Build and Deploy to GitHub Pages
+
 on:
   push:
     branches: [main]
-    paths:
-      - "site/**"
-      - ".github/workflows/deploy.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
-      - name: Publish
-        run: echo "Add your GitHub Pages deploy steps here"
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 1. Replace this step with whatever script/tool generates your sitemap
+      # Make sure your sitemap generator's base URL is set to:
+      # https://www.multireligionvalsystem.eu.org
+      - name: Generate Sitemap
+        run: |
+          echo "Run your sitemap generator here and output to ./sitemap.xml"
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Uploads the root folder (including your freshly generated sitemap.xml)
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
