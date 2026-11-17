@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+const PUBLIC_DIR = __dirname; // Läser från rotmappen i stället för 'public'
+const OUTPUT_PATH = path.join(__dirname, 'sitemap.xml'); // Sparar i rotmappen
 <urlset xmlns="http://sitemaps.org">
   <url>
     <loc>https://www.multireligionvalsystem.eu.org/</loc>
