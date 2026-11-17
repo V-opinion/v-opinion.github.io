@@ -1,0 +1,1095 @@
+<!DOCTYPE html> 
+<html lang="sv"> <head> 
+<script type="5724708120bb4a10cc57c56b-text/javascript"> (function(w,d,s,l,i){ w[l]=w[l]||[]; w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'}); var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer' ? '&l='+l : ''; j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl; f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-MMV2S7Z6'); 
+
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MMV2S7Z6" height="0" width="0" style="display:none;visibility:hidden"></iframe></script> <meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<meta name="description" content="Learn how to promote interfaith understanding through effective inter-religious dialogue. Free guide from Stockholm's multi-faith community with 1,200+ members.">
+ <title>A multi-religion election system: MRES | Multireligionvalsystem</title> 
+<meta name="google-site-verification" content="WdnsMxOviwQTsK0Dxo8FqJ2spmgqYOGkSwh6Nl-4wZk"> <link rel="canonical" href="https://multireligionvalsystem.eu.org/A-multi-religion-election-system/index.html/" />
+ <meta name="description" content="Hur kommer det sig då att samtliga som håller på med FN:s rollspel för fred ,konfliktlösningsmodeller och Nobels fredspris (Oslo-avtalet) har misslyckats med att lösa den 78 år långa konflikten mellan Israel och Palestina så att den har  tillåtits att överlämnas från ena generatioen till den andra .?  Det har lett till att de sionistiska terrorister som mördade Nobels fredspristagare har fått diktera freden ."> 
+<meta name="keywords" content="Kyrkovalsreform, Nordic church elections,The Grand Inter-Faith Ballot, Religious Tolerance Education A Guide for Teachers> 
+    <link rel="canonical" href="https://multireligionvalsystem.eu.org/a-multi-religion-election-system"/>   
+ <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #0a0a0f;
+            --card: #12121a;
+            --card-border: rgba(255, 255, 255, 0.06);
+            --fg: #e8e6f0;
+            --muted: #6b6880;
+            --accent: #f0a040;
+            --accent-glow: rgba(240, 160, 64, 0.35);
+            --accent-dim: #c07820;
+            --progress-bg: rgba(255, 255, 255, 0.08);
+            --volume-bg: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Atmospheric background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -40%;
+            left: -20%;
+            width: 80vw;
+            height: 80vw;
+            background: radial-gradient(circle, rgba(240, 160, 64, 0.06) 0%, transparent 65%);
+            pointer-events: none;
+            animation: driftBlob 18s ease-in-out infinite alternate;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: -30%;
+            right: -15%;
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, rgba(180, 80, 220, 0.04) 0%, transparent 60%);
+            pointer-events: none;
+            animation: driftBlob 22s ease-in-out infinite alternate-reverse;
+        }
+
+        @keyframes driftBlob {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                transform: translate(60px, -40px) scale(1.15);
+            }
+        }
+
+        /* Hidden native audio */
+        #MediaPlayer1 {
+            display: none !important;
+        }
+
+        /* Player container */
+        .player-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 480px;
+            padding: 0 16px;
+            z-index: 10;
+        }
+
+        .player-card {
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 32px 28px 28px;
+            position: relative;
+            overflow: hidden;
+            box-shadow:
+                0 2px 40px rgba(0, 0, 0, 0.5),
+                0 0 80px rgba(240, 160, 64, 0.03);
+            backdrop-filter: blur(20px);
+        }
+
+        /* Subtle inner glow at top */
+        .player-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20%;
+            right: 20%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-glow), transparent);
+        }
+
+        /* Visualizer area */
+        .visualizer-container {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 28px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .vis-ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 1.5px solid rgba(240, 160, 64, 0.12);
+            animation: pulseRing 3s ease-in-out infinite;
+        }
+
+        .vis-ring:nth-child(1) {
+            width: 100%;
+            height: 100%;
+            animation-delay: 0s;
+        }
+
+        .vis-ring:nth-child(2) {
+            width: 120%;
+            height: 120%;
+            animation-delay: 0.6s;
+            opacity: 0.6;
+        }
+
+        .vis-ring:nth-child(3) {
+            width: 140%;
+            height: 140%;
+            animation-delay: 1.2s;
+            opacity: 0.3;
+        }
+
+        .player-card:not(.playing) .vis-ring {
+            animation-play-state: paused;
+        }
+
+        @keyframes pulseRing {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: scale(1.04);
+                opacity: 1;
+            }
+        }
+
+        .vis-disc {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg,
+                    #1a1a28, #22222e, #1a1a28, #22222e, #1a1a28);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+            transition: transform 0.3s ease;
+        }
+
+        .player-card.playing .vis-disc {
+            animation: spinDisc 4s linear infinite;
+        }
+
+        @keyframes spinDisc {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .vis-disc::after {
+            content: '';
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 12px var(--accent-glow), 0 0 30px rgba(240, 160, 64, 0.15);
+        }
+
+        /* Canvas visualizer bars behind disc */
+        #visualizerCanvas {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        /* Track info */
+        .track-info {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .track-title {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--fg);
+            letter-spacing: -0.02em;
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .track-artist {
+            font-size: 0.82rem;
+            font-weight: 400;
+            color: var(--muted);
+            letter-spacing: 0.02em;
+        }
+
+        /* Progress bar */
+        .progress-section {
+            margin-bottom: 20px;
+        }
+
+        .progress-bar-wrap {
+            width: 100%;
+            height: 6px;
+            background: var(--progress-bg);
+            border-radius: 3px;
+            cursor: pointer;
+            position: relative;
+            transition: height 0.15s ease;
+        }
+
+        .progress-bar-wrap:hover {
+            height: 8px;
+        }
+
+        .progress-bar-wrap:hover .progress-thumb {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-dim), var(--accent));
+            border-radius: 3px;
+            width: 0%;
+            position: relative;
+            transition: width 0.1s linear;
+            box-shadow: 0 0 8px rgba(240, 160, 64, 0.2);
+        }
+
+        .progress-thumb {
+            position: absolute;
+            right: -7px;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(0.6);
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 10px var(--accent-glow);
+            opacity: 0;
+            transition: opacity 0.15s, transform 0.15s;
+            pointer-events: none;
+        }
+
+        .time-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8px;
+            font-size: 0.72rem;
+            font-weight: 400;
+            color: var(--muted);
+            letter-spacing: 0.04em;
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Controls */
+        .controls-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 22px;
+        }
+
+        .ctrl-btn {
+            background: none;
+            border: none;
+            color: var(--muted);
+            cursor: pointer;
+            font-size: 1.1rem;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: color 0.2s, background 0.2s, transform 0.15s;
+            outline: none;
+        }
+
+        .ctrl-btn:hover {
+            color: var(--fg);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .ctrl-btn:active {
+            transform: scale(0.92);
+        }
+
+        .ctrl-btn:focus-visible {
+            box-shadow: 0 0 0 2px var(--accent);
+        }
+
+        .play-btn {
+            width: 58px;
+            height: 58px;
+            font-size: 1.35rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dim));
+            color: #0a0a0f;
+            border-radius: 50%;
+            box-shadow: 0 4px 20px var(--accent-glow), 0 0 40px rgba(240, 160, 64, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .play-btn:hover {
+            background: linear-gradient(135deg, var(--accent), var(--accent-dim));
+            color: #0a0a0f;
+            transform: scale(1.06);
+            box-shadow: 0 4px 28px var(--accent-glow), 0 0 60px rgba(240, 160, 64, 0.15);
+        }
+
+        .play-btn:active {
+            transform: scale(0.96);
+        }
+
+        .play-btn i {
+            margin-left: 2px;
+        }
+
+        .player-card.playing .play-btn i.fa-play::before {
+            content: "\f04c";
+        }
+
+        /* Volume row */
+        .volume-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0 4px;
+        }
+
+        .volume-icon {
+            background: none;
+            border: none;
+            color: var(--muted);
+            cursor: pointer;
+            font-size: 0.9rem;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s;
+            outline: none;
+            flex-shrink: 0;
+        }
+
+        .volume-icon:hover {
+            color: var(--fg);
+        }
+
+        .volume-icon:focus-visible {
+            box-shadow: 0 0 0 2px var(--accent);
+            border-radius: 4px;
+        }
+
+        .volume-bar-wrap {
+            flex: 1;
+            height: 4px;
+            background: var(--volume-bg);
+            border-radius: 2px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .volume-bar-wrap:hover {
+            height: 6px;
+        }
+
+        .volume-fill {
+            height: 100%;
+            background: var(--muted);
+            border-radius: 2px;
+            width: 80%;
+            transition: width 0.05s linear, background 0.2s;
+        }
+
+        .volume-bar-wrap:hover .volume-fill {
+            background: var(--accent);
+        }
+
+        .volume-percent {
+            font-size: 0.7rem;
+            color: var(--muted);
+            width: 30px;
+            text-align: right;
+            font-variant-numeric: tabular-nums;
+            flex-shrink: 0;
+        }
+
+        /* Speed indicator */
+        .speed-btn {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            color: var(--muted);
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: color 0.2s, border-color 0.2s, background 0.2s;
+            outline: none;
+            flex-shrink: 0;
+            margin-left: 6px;
+        }
+
+        .speed-btn:hover {
+            color: var(--accent);
+            border-color: rgba(240, 160, 64, 0.2);
+            background: rgba(240, 160, 64, 0.06);
+        }
+
+        .speed-btn:focus-visible {
+            box-shadow: 0 0 0 2px var(--accent);
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            color: var(--fg);
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.82rem;
+            padding: 10px 22px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s, transform 0.3s;
+            z-index: 999;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* Floating particles */
+        .particle {
+            position: fixed;
+            width: 2px;
+            height: 2px;
+            background: var(--accent);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+            z-index: 0;
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+
+            .vis-ring,
+            .vis-disc,
+            .particle {
+                animation: none !important;
+            }
+
+            .player-card.playing .vis-disc {
+                animation: none !important;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 500px) {
+            .player-card {
+                padding: 24px 20px 22px;
+                border-radius: 20px;
+            }
+
+            .visualizer-container {
+                width: 110px;
+                height: 110px;
+                margin-bottom: 22px;
+            }
+
+            .vis-disc {
+                width: 88px;
+                height: 88px;
+            }
+
+            .track-title {
+                font-size: 1.05rem;
+            }
+
+            .controls-row {
+                gap: 18px;
+            }
+
+            .play-btn {
+                width: 52px;
+                height: 52px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- The original audio element (hidden, used for actual playback) -->
+    <div id="wb_MediaPlayer1" style="display:block;width:100%;z-index:10;">
+        <audio id="MediaPlayer1" autoplay controls>
+            <source src="https://multireligionvalsystem.eu.org/A-multi-religion-election-system/Cite-This-Page/TRK.m4a" type="audio/wav">
+        </audio>
+    </div>
+
+    <!-- Custom player UI -->
+    <div class="player-wrapper">
+        <div class="player-card" id="playerCard">
+
+            <!-- Visualizer -->
+            <div class="visualizer-container">
+                <canvas id="visualizerCanvas" width="200" height="200"></canvas>
+                <div class="vis-ring"></div>
+                <div class="vis-ring"></div>
+                <div class="vis-ring"></div>
+                <div class="vis-disc"></div>
+            </div>
+
+            <!-- Track info -->
+            <div class="track-info">
+                <div class="track-title" id="trackTitle">Multireligionvalsystem<- Topp konfliktlösningsmodell /div>
+                <div class="track-artist" id="trackArtist">Streaming Audio</div>
+            </div>
+
+            <!-- Progress -->
+            <div class="progress-section">
+                <div class="progress-bar-wrap" id="progressWrap" role="slider" aria-label="Seek audio" aria-valuemin="0"
+                    aria-valuemax="100" aria-valuenow="0" tabindex="0">
+                    <div class="progress-fill" id="progressFill">
+                        <div class="progress-thumb"></div>
+                    </div>
+                </div>
+                <div class="time-row">
+                    <span id="timeCurrent">0:00</span>
+                    <span id="timeDuration">0:00</span>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="controls-row">
+                <button class="ctrl-btn" id="btnBackward" aria-label="Rewind 10 seconds" title="Rewind 10s">
+                    <i class="fa-solid fa-backward"></i>
+                </button>
+                <button class="ctrl-btn play-btn" id="btnPlay" aria-label="Play" title="Play / Pause">
+                    <i class="fa-solid fa-play"></i>
+                </button>
+                <button class="ctrl-btn" id="btnForward" aria-label="Forward 10 seconds" title="Forward 10s">
+                    <i class="fa-solid fa-forward"></i>
+                </button>
+            </div>
+
+            <!-- Volume + Speed -->
+            <div class="volume-row">
+                <button class="volume-icon" id="btnMute" aria-label="Mute / Unmute" title="Mute">
+                    <i class="fa-solid fa-volume-high"></i>
+                </button>
+                <div class="volume-bar-wrap" id="volumeWrap" role="slider" aria-label="Volume" aria-valuemin="0"
+                    aria-valuemax="100" aria-valuenow="80" tabindex="0">
+                    <div class="volume-fill" id="volumeFill"></div>
+                </div>
+                <span class="volume-percent" id="volumePercent">80%</span>
+                <button class="speed-btn" id="btnSpeed" aria-label="Playback speed" title="Playback speed">1x</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script>
+        // === Core references ===
+        const audio = document.getElementById('MediaPlayer1');
+        const card = document.getElementById('playerCard');
+        const btnPlay = document.getElementById('btnPlay');
+        const btnBackward = document.getElementById('btnBackward');
+        const btnForward = document.getElementById('btnForward');
+        const btnMute = document.getElementById('btnMute');
+        const btnSpeed = document.getElementById('btnSpeed');
+        const progressWrap = document.getElementById('progressWrap');
+        const progressFill = document.getElementById('progressFill');
+        const timeCurrent = document.getElementById('timeCurrent');
+        const timeDuration = document.getElementById('timeDuration');
+        const volumeWrap = document.getElementById('volumeWrap');
+        const volumeFill = document.getElementById('volumeFill');
+        const volumePercent = document.getElementById('volumePercent');
+        const canvas = document.getElementById('visualizerCanvas');
+        const ctx = canvas.getContext('2d');
+        const toastEl = document.getElementById('toast');
+
+        // === State ===
+        let isPlaying = false;
+        let isSeeking = false;
+        let isDraggingVolume = false;
+        let currentSpeed = 1;
+        const speeds = [0.5, 0.75, 1, 1.25, 1.5, 2];
+        let speedIndex = 2;
+        let previousVolume = 0.8;
+
+        // Set initial volume
+        audio.volume = 0.8;
+        volumeFill.style.width = '80%';
+
+        // === Utility: format time ===
+        function formatTime(sec) {
+            if (!isFinite(sec) || sec < 0) return '0:00';
+            const m = Math.floor(sec / 60);
+            const s = Math.floor(sec % 60);
+            return m + ':' + (s < 10 ? '0' : '') + s;
+        }
+
+        // === Toast ===
+        let toastTimer = null;
+        function showToast(msg) {
+            toastEl.textContent = msg;
+            toastEl.classList.add('show');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => toastEl.classList.remove('show'), 1800);
+        }
+
+        // === Play / Pause ===
+        function togglePlay() {
+            if (isPlaying) {
+                audio.pause();
+            } else {
+                audio.play().catch(() => { });
+            }
+        }
+
+        btnPlay.addEventListener('click', togglePlay);
+
+        // Keyboard shortcut: Space to toggle
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space' && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'INPUT') {
+                e.preventDefault();
+                togglePlay();
+            }
+            if (e.code === 'ArrowLeft') { audio.currentTime = Math.max(0, audio.currentTime - 5); }
+            if (e.code === 'ArrowRight') { audio.currentTime = Math.min(audio.duration || 0, audio.currentTime + 5); }
+        });
+
+        // === Audio events ===
+        audio.addEventListener('play', () => {
+            isPlaying = true;
+            card.classList.add('playing');
+            btnPlay.setAttribute('aria-label', 'Pause');
+            initAudioContext();
+        });
+
+        audio.addEventListener('pause', () => {
+            isPlaying = false;
+            card.classList.remove('playing');
+            btnPlay.setAttribute('aria-label', 'Play');
+        });
+
+        audio.addEventListener('ended', () => {
+            isPlaying = false;
+            card.classList.remove('playing');
+        });
+
+        audio.addEventListener('loadedmetadata', () => {
+            timeDuration.textContent = formatTime(audio.duration);
+        });
+
+        audio.addEventListener('timeupdate', () => {
+            if (isSeeking) return;
+            const pct = audio.duration ? (audio.currentTime / audio.duration) * 100 : 0;
+            progressFill.style.width = pct + '%';
+            progressWrap.setAttribute('aria-valuenow', Math.round(pct));
+            timeCurrent.textContent = formatTime(audio.currentTime);
+        });
+
+        audio.addEventListener('durationchange', () => {
+            timeDuration.textContent = formatTime(audio.duration);
+        });
+
+        // === Progress seek ===
+        function seekFromEvent(e) {
+            const rect = progressWrap.getBoundingClientRect();
+            let pct = (e.clientX - rect.left) / rect.width;
+            pct = Math.max(0, Math.min(1, pct));
+            progressFill.style.width = (pct * 100) + '%';
+            if (audio.duration) {
+                audio.currentTime = pct * audio.duration;
+            }
+        }
+
+        progressWrap.addEventListener('mousedown', (e) => {
+            isSeeking = true;
+            seekFromEvent(e);
+        });
+        document.addEventListener('mousemove', (e) => {
+            if (isSeeking) seekFromEvent(e);
+        });
+        document.addEventListener('mouseup', () => {
+            isSeeking = false;
+        });
+
+        // Touch support for progress
+        progressWrap.addEventListener('touchstart', (e) => {
+            isSeeking = true;
+            seekFromEvent(e.touches[0]);
+        }, { passive: true });
+        document.addEventListener('touchmove', (e) => {
+            if (isSeeking) seekFromEvent(e.touches[0]);
+        }, { passive: true });
+        document.addEventListener('touchend', () => { isSeeking = false; });
+
+        // === Skip buttons ===
+        btnBackward.addEventListener('click', () => {
+            audio.currentTime = Math.max(0, audio.currentTime - 10);
+            showToast('-10 seconds');
+        });
+
+        btnForward.addEventListener('click', () => {
+            audio.currentTime = Math.min(audio.duration || 0, audio.currentTime + 10);
+            showToast('+10 seconds');
+        });
+
+        // === Volume ===
+        function setVolumeFromEvent(e) {
+            const rect = volumeWrap.getBoundingClientRect();
+            let pct = (e.clientX - rect.left) / rect.width;
+            pct = Math.max(0, Math.min(1, pct));
+            audio.volume = pct;
+            audio.muted = false;
+            volumeFill.style.width = (pct * 100) + '%';
+            volumePercent.textContent = Math.round(pct * 100) + '%';
+            volumeWrap.setAttribute('aria-valuenow', Math.round(pct * 100));
+            updateVolumeIcon(pct);
+        }
+
+        function updateVolumeIcon(vol) {
+            const icon = btnMute.querySelector('i');
+            if (audio.muted || vol === 0) {
+                icon.className = 'fa-solid fa-volume-xmark';
+                btnMute.setAttribute('aria-label', 'Unmute');
+            } else if (vol < 0.4) {
+                icon.className = 'fa-solid fa-volume-low';
+                btnMute.setAttribute('aria-label', 'Mute');
+            } else {
+                icon.className = 'fa-solid fa-volume-high';
+                btnMute.setAttribute('aria-label', 'Mute');
+            }
+        }
+
+        volumeWrap.addEventListener('mousedown', (e) => {
+            isDraggingVolume = true;
+            setVolumeFromEvent(e);
+        });
+        document.addEventListener('mousemove', (e) => {
+            if (isDraggingVolume) setVolumeFromEvent(e);
+        });
+        document.addEventListener('mouseup', () => { isDraggingVolume = false; });
+
+        // Touch support for volume
+        volumeWrap.addEventListener('touchstart', (e) => {
+            isDraggingVolume = true;
+            setVolumeFromEvent(e.touches[0]);
+        }, { passive: true });
+        document.addEventListener('touchmove', (e) => {
+            if (isDraggingVolume) setVolumeFromEvent(e.touches[0]);
+        }, { passive: true });
+        document.addEventListener('touchend', () => { isDraggingVolume = false; });
+
+        btnMute.addEventListener('click', () => {
+            if (audio.muted || audio.volume === 0) {
+                audio.muted = false;
+                audio.volume = previousVolume || 0.8;
+                volumeFill.style.width = (audio.volume * 100) + '%';
+                volumePercent.textContent = Math.round(audio.volume * 100) + '%';
+                updateVolumeIcon(audio.volume);
+                showToast('Unmuted');
+            } else {
+                previousVolume = audio.volume;
+                audio.muted = true;
+                volumeFill.style.width = '0%';
+                volumePercent.textContent = '0%';
+                updateVolumeIcon(0);
+                showToast('Muted');
+            }
+        });
+
+        // === Speed ===
+        btnSpeed.addEventListener('click', () => {
+            speedIndex = (speedIndex + 1) % speeds.length;
+            currentSpeed = speeds[speedIndex];
+            audio.playbackRate = currentSpeed;
+            btnSpeed.textContent = currentSpeed + 'x';
+            showToast('Speed: ' + currentSpeed + 'x');
+        });
+
+        // === Audio Visualizer (Web Audio API) ===
+        let audioCtx = null;
+        let analyser = null;
+        let sourceNode = null;
+        let dataArray = null;
+        let audioContextInitialized = false;
+
+        function initAudioContext() {
+            if (audioContextInitialized) return;
+            try {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                analyser = audioCtx.createAnalyser();
+                analyser.fftSize = 64;
+                sourceNode = audioCtx.createMediaElementSource(audio);
+                sourceNode.connect(analyser);
+                analyser.connect(audioCtx.destination);
+                dataArray = new Uint8Array(analyser.frequencyBinCount);
+                audioContextInitialized = true;
+            } catch (err) {
+                // Graceful fallback — visualizer just won't show bars
+                console.warn('AudioContext not available:', err);
+            }
+        }
+
+        function drawVisualizer() {
+            requestAnimationFrame(drawVisualizer);
+
+            const w = canvas.width;
+            const h = canvas.height;
+            ctx.clearRect(0, 0, w, h);
+
+            if (!analyser || !isPlaying) {
+                // Draw subtle idle bars
+                const cx = w / 2;
+                const cy = h / 2;
+                const barCount = 24;
+                for (let i = 0; i < barCount; i++) {
+                    const angle = (i / barCount) * Math.PI * 2 - Math.PI / 2;
+                    const innerR = 58;
+                    const outerR = innerR + 3;
+                    const x1 = cx + Math.cos(angle) * innerR;
+                    const y1 = cy + Math.sin(angle) * innerR;
+                    const x2 = cx + Math.cos(angle) * outerR;
+                    const y2 = cy + Math.sin(angle) * outerR;
+                    ctx.beginPath();
+                    ctx.moveTo(x1, y1);
+                    ctx.lineTo(x2, y2);
+                    ctx.strokeStyle = 'rgba(240,160,64,0.15)';
+                    ctx.lineWidth = 2;
+                    ctx.lineCap = 'round';
+                    ctx.stroke();
+                }
+                return;
+            }
+
+            analyser.getByteFrequencyData(dataArray);
+            const cx = w / 2;
+            const cy = h / 2;
+            const barCount = dataArray.length;
+
+            for (let i = 0; i < barCount; i++) {
+                const angle = (i / barCount) * Math.PI * 2 - Math.PI / 2;
+                const val = dataArray[i] / 255;
+                const innerR = 58;
+                const outerR = innerR + val * 30;
+                const x1 = cx + Math.cos(angle) * innerR;
+                const y1 = cy + Math.sin(angle) * innerR;
+                const x2 = cx + Math.cos(angle) * outerR;
+                const y2 = cy + Math.sin(angle) * outerR;
+
+                const alpha = 0.25 + val * 0.75;
+                ctx.beginPath();
+                ctx.moveTo(x1, y1);
+                ctx.lineTo(x2, y2);
+                ctx.strokeStyle = `rgba(240,160,64,${alpha})`;
+                ctx.lineWidth = 2.5;
+                ctx.lineCap = 'round';
+                ctx.stroke();
+            }
+        }
+
+        drawVisualizer();
+
+        // === Floating particles ===
+        function createParticles() {
+            const count = 15;
+            for (let i = 0; i < count; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                const size = 1 + Math.random() * 2;
+                p.style.width = size + 'px';
+                p.style.height = size + 'px';
+                p.style.left = Math.random() * 100 + 'vw';
+                p.style.top = Math.random() * 100 + 'vh';
+                p.style.opacity = 0;
+                const dur = 6 + Math.random() * 10;
+                const delay = Math.random() * 8;
+                p.style.animation = `floatParticle ${dur}s ${delay}s ease-in-out infinite`;
+                document.body.appendChild(p);
+            }
+
+            // Inject the keyframes
+            const style = document.createElement('style');
+            style.textContent = `
+      @keyframes floatParticle {
+        0% { opacity: 0; transform: translateY(0) translateX(0); }
+        20% { opacity: 0.4; }
+        80% { opacity: 0.2; }
+        100% { opacity: 0; transform: translateY(-80px) translateX(${20 - Math.random() * 40}px); }
+      }
+    `;
+            document.head.appendChild(style);
+        }
+
+        // Only create particles if user doesn't prefer reduced motion
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            createParticles();
+        }
+    </script>
+      
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MMV2S7Z6"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+<footer>
+  <div class="footer-links">
+    <h4>Our Network</h4>
+    <ul>
+      <li><a href="https://www.multireligionvalsystem.eu.org">Religion Comparisons</a></li>
+      <li><a href="https://www.multireligionvalsystem.eu.org/EU-utnyttjas-som-propaganda-for-NATO/">Political conflict resolution model</a></li>
+      <li><a href="https://clawdbot.multireligionvalsystem.eu.org">Clawdbot AI</a></li>
+    </ul>
+  </div>
+    <!-- Section: What is the difference between MRVS, MRV and Multi-religion support -->
+<section id="difference" class="py-20 px-6 bg-[#f5f5f7]">
+  <div class="max-w-5xl mx-auto">
+
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <span class="inline-block text-[11px] font-bold uppercase tracking-[0.2em] text-[#86868b] mb-4">Understanding the Framework</span>
+      <h2 class="text-3xl md:text-5xl font-semibold text-[#1d1d1f] tracking-tight leading-tight">
+        What is the difference between<br class="hidden md:block"> MRVS, MRV and Multi-Religion Support?Läs vidare om Multireligionvalsystemet ,Multireligionvalsystem ,FN:s rollspel för fred som kan lösa den 78 år långa konflikten mellan Israel och Palestina..
+<li><a href="https://www.multireligionvalsystem.eu.org/A-multi-religion-election-system/What-is-MRES/">👉 engagera dig nu ! 🤑  </a></li>
+      </h2>
+    </div>
+
+    <!-- Three Module Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+
+      <!-- MRVS Card -->
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-[#d2d2d7]/30 hover:shadow-md transition-shadow duration-300">
+        <div class="w-14 h-14 rounded-2xl bg-[#0071e3]/10 flex items-center justify-center mb-6">
+          <svg class="w-7 h-7 text-[#0071e3]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-[#1d1d1f] mb-2 tracking-tight">MRVS</h3>
+        <p class="text-[11px] font-bold uppercase tracking-[0.15em] text-[#0071e3] mb-3">Theoretical Application</p>
+        <p class="text-sm text-[#86868b] leading-relaxed">
+          Multi-Religion Election System — the overarching theoretical framework that defines the conceptual model for separating religion from political governance.
+        </p>
+      </div>
+
+      <!-- MRV Card -->
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-[#d2d2d7]/30 hover:shadow-md transition-shadow duration-300">
+        <div class="w-14 h-14 rounded-2xl bg-[#0071e3]/10 flex items-center justify-center mb-6">
+          <svg class="w-7 h-7 text-[#0071e3]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-[#1d1d1f] mb-2 tracking-tight">MRV</h3>
+        <p class="text-[11px] font-bold uppercase tracking-[0.15em] text-[#0071e3] mb-3">Practical Application</p>
+        <p class="text-sm text-[#86868b] leading-relaxed">
+          Multi-Religion Election — the operational, on-the-ground implementation of MRVS, where the theoretical model is put into concrete electoral practice.
+        </p>
+      </div>
+
+      <!-- Multi-Religion Support Card -->
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-[#d2d2d7]/30 hover:shadow-md transition-shadow duration-300">
+        <div class="w-14 h-14 rounded-2xl bg-[#0071e3]/10 flex items-center justify-center mb-6">
+          <svg class="w-7 h-7 text-[#0071e3]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-[#1d1d1f] mb-2 tracking-tight">Multi-Religion Support</h3>
+        <p class="text-[11px] font-bold uppercase tracking-[0.15em] text-[#0071e3] mb-3">Financial Application</p>
+        <p class="text-sm text-[#86868b] leading-relaxed">
+          The financial arm that provides the economic resources and funding mechanisms necessary to sustain and operationalize both MRVS and MRV.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Connector Diagram -->
+    <div class="flex items-center justify-center gap-4 mb-12 flex-wrap">
+      <span class="px-4 py-2 bg-[#0071e3] text-white text-xs font-bold uppercase tracking-wider rounded-full">MRVS</span>
+      <svg class="w-5 h-5 text-[#d2d2d7]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+      <span class="px-4 py-2 bg-[#0071e3] text-white text-xs font-bold uppercase tracking-wider rounded-full">MRV</span>
+      <svg class="w-5 h-5 text-[#d2d2d7]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+      <span class="px-4 py-2 bg-[#0071e3] text-white text-xs font-bold uppercase tracking-wider rounded-full">Multi-Religion Support</span>
+    </div>
+
+    <!-- Explanatory Text -->
+    <div class="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-[#d2d2d7]/30 mb-8">
+      <div class="flex items-start gap-4">
+        <div class="hidden md:flex w-1 min-h-full bg-[#0071e3] rounded-full flex-shrink-0 mt-1"></div>
+        <div>
+          <p class="text-base md:text-lg text-[#1d1d1f] leading-relaxed mb-4">
+            Previously, we have defined the <strong class="font-semibold">Multi-Religion Election System (MRVS)</strong> which is the theoretical application, consisting of <strong class="font-semibold">Multi-Religion Election (MRV)</strong> which is the practical application of MRVS, and <strong class="font-semibold">Multi-Religion Support</strong> which is the financial application.
+          </p>
+          <p class="text-base md:text-lg text-[#1d1d1f] leading-relaxed mb-4">
+            It is these three modules — MRVS, MRV and Multi-Religion Support — that the <strong class="font-semibold">environmental model for democracy</strong>, democracy from theory to practice, rests on.
+          </p>
+          <p class="text-base md:text-lg text-[#1d1d1f] leading-relaxed">
+            Only through this can a <strong class="font-semibold">complete separation between state and church</strong> and <strong class="font-semibold">between religion and politics</strong> be completed — which in turn enables the 78-year-old conflict between Israel and Palestine to be resolved in an effective and rapid manner, and thus avoid the conflict being passed on to the next generation.
+          </p>
+          <div class="mt-6 p-4 bg-[#f5f5f7] rounded-xl border-l-4 border-[#0071e3]">
+            <p class="text-sm text-[#1d1d1f] leading-relaxed">
+              This is called a <strong class="font-semibold">sustainable policy</strong> that enables <strong class="font-semibold">sustainable development</strong> based on the war constituting a threat to humanity and the environment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div class="csl-entry"><i>https://www.multireligionvalsystem.eu.org/Topp-konfliktlosningsmodell.html</i>. (n.d.).</div>
+(<i>Https://www.multireligionvalsystem.Eu.Org/Topp-Konfliktlosningsmodell.Html</i>, n.d.)
+    <!-- Tags -->
+    <div class="flex flex-wrap items-center gap-2 justify-center">
+      <span class="px-3 py-1.5 bg-white border border-[#d2d2d7] rounded-full text-[11px] font-medium text-[#86868b] hover:border-[#0071e3] hover:text-[#0071e3] transition-colors duration-200 cursor-default">#MRVS</span>
+      <span class="px-3 py-1.5 bg-white border border-[#d2d2d7] rounded-full text-[11px] font-medium text-[#86868b] hover:border-[#0071e3] hover:text-[#0071e3] transition-colors duration-200 cursor-default">#MRV</span>
+      <span class="px-3 py-1.5 bg-white border border-[#d2d2d7] rounded-full text-[11px] font-medium text-[#86868b] hover:border-[#0071e3] hover:text-[#0071e3] transition-colors duration-200 cursor-default">#MultiReligionSupport</span>
+      <span class="px-3 py-1.5 bg-white border border-[#d2d2d7] rounded-full text-[11px] font-medium text-[#86868b] hover:border-[#0071e3] hover:text-[#0071e3] transition-colors duration-200 cursor-default">#SeparationOfChurchAndState</span>
+      <span class="px-3 py-1.5 bg-white border border-[#d2d2d7] rounded-full text-[11px] font-medium text-[#86868b] hover:border-[#0071e3] hover:text-[#0071e3] transition-colors duration-200 cursor-default">#EnvironmentalModelForDemocracy</span>
+      <span class="px-3 py-1.5 bg-white border border-[#d2d2d7] rounded-full text-[11px] font-medium text-[#86868b] hover:border-[#0071e3] hover:text-[#0071e3] transition-colors duration-200 cursor-default">#SustainablePolicy</span>
+      <span class="px-3 py-1.5 bg-white border border-[#d2d2d7] rounded-full text-[11px] font-medium text-[#86868b] hover:border-[#0071e3] hover:text-[#0071e3] transition-colors duration-200 cursor-default">#SustainableDevelopment</span>
+      <span class="px-3 py-1.5 bg-white border border-[#d2d2d7] rounded-full text-[11px] font-medium text-[#86868b] hover:border-[#0071e3] hover:text-[#0071e3] transition-colors duration-200 cursor-default">#IsraelPalestineConflict</span>
+      <span class="px-3 py-1.5 bg-white border border-[#d2d2d7] rounded-full text-[11px] font-medium text-[#86868b] hover:border-[#0071e3] hover:text-[#0071e3] transition-colors duration-200 cursor-default">#ReligionAndPolitics</span>
+      <span class="px-3 py-1.5 bg-white border border-[#d2d2d7] rounded-full text-[11px] font-medium text-[#86868b] hover:border-[#0071e3] hover:text-[#0071e3] transition-colors duration-200 cursor-default">#DemocracyFromTheoryToPractice</span>
+      <span class="px-3 py-1.5 bg-white border border-[#d2d2d7] rounded-full text-[11px] font-medium text-[#86868b] hover:border-[#0071e3] hover:text-[#0071e3] transition-colors duration-200 cursor-default">#ThreatToHumanity</span>
+    </div>
+
+  </div>
+</section>
+</footer>
+     Läs vidare om Multireligionvalsystemet ,Multireligionvalsystem ,FN:s rollspel för fred som kan lösa den 78 år långa konflikten mellan Israel och Palestina..
+<li><a href="https://www.multireligionvalsystem.eu.org/A-multi-religion-election-system/What-is-MRES/">👉 engagera dig nu ! 🤑  </a></li>
+</body>
+
+</html>
