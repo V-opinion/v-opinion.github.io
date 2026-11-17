@@ -3,8 +3,8 @@ name: Generate and Update Sitemap
 on:
   push:
     branches:
-      - main  # Change to 'master' if your default branch is master
-  workflow_dispatch: # Allows manual trigger from GitHub Actions tab
+      - main
+  workflow_dispatch:
 
 jobs:
   sitemap:
@@ -29,8 +29,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           
-          # Check if public/sitemap.xml has changed
-          git add public/sitemap.xml
+          git add sitemap.xml
           
           if git diff --staged --quiet; then
             echo "No changes to sitemap.xml to commit."
