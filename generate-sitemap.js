@@ -3,10 +3,14 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 const BASE_URL = 'https://www.multireligionvalsystem.eu.org';
+const SITE_TITLE = 'Multi-Religion Election System';
+const SITE_DESCRIPTION = 'Publications, analysis, and essays on the Multi-Religion Election System.';
+
 const ROOT_DIR = __dirname;
 const ARTICLES_DIR = path.join(ROOT_DIR, 'articles');
 const ARTICLES_INDEX_PATH = path.join(ARTICLES_DIR, 'index.html');
-const OUTPUT_PATH = path.join(ROOT_DIR, 'sitemap.xml');
+const RSS_OUTPUT_PATH = path.join(ROOT_DIR, 'feed.xml');
+const SITEMAP_OUTPUT_PATH = path.join(ROOT_DIR, 'sitemap.xml');
 
 // Exakta filnamn som ska ignoreras
 const IGNORED_FILES = new Set([
@@ -34,6 +38,16 @@ const IGNORED_DIRS = new Set([
   'a_data'
 ]);
 
+// Hjälpfunktion för att säkra text i XML (RSS & Sitemap)
+function escapeXml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
 // Hämtar det verkliga datumet då filen senast ändrades i Git
 function getLastModDate(fullPath) {
   try {
@@ -52,11 +66,10 @@ function getLastModDate(fullPath) {
   return stats.mtime.toISOString().split('T')[0];
 }
 
-// Extraherar rubrik och beskrivning från en HTML-fil
+// Extraherar rubrik, beskrivning och datum från en artikel-HTML
 function extractArticleMetadata(fullPath, fallbackSlug) {
   const html = fs.readFileSync(fullPath, 'utf8');
 
-  // Försök hitta <h1> först, annars <title>
   const h1Match = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
   const titleMatch = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
 
@@ -67,22 +80,20 @@ function extractArticleMetadata(fullPath, fallbackSlug) {
     title = titleMatch[1].split('|')[0].replace(/<[^>]+>/g, '').trim();
   }
 
-  // Extrahera <meta name="description" content="...">
   const descMatch =
     html.match(/<meta\s+name=["']description["']\s+content=["']([^"']*)["']/i) ||
     html.match(/<meta\s+content=["']([^"']*)["']\s+name=["']description["']/i);
 
   const description = descMatch ? descMatch[1].trim() : '';
 
-  // Extrahera publiceringsdatum om det finns i <time datetime="YYYY-MM-DD">, annars Git-datum
   const timeMatch = html.match(/<time[^>]+datetime=["'](\d{4}-\d{2}-\d{2})["']/i);
   const date = timeMatch ? timeMatch[1] : getLastModDate(fullPath);
 
   return { title, description, date };
 }
 
-// Skannar articles/ och skapar articles/index.html automatiskt
-function buildArticlesIndex() {
+// Samlar alla artiklar i articles/ och returnerar dem sorterade (nyast först)
+function collectArticles() {
   if (!fs.existsSync(ARTICLES_DIR)) {
     fs.mkdirSync(ARTICLES_DIR, { recursive: true });
   }
@@ -103,7 +114,6 @@ function buildArticlesIndex() {
           findArticles(fullPath, currentRel);
         }
       } else if (entry.isFile() && entry.name.endsWith('.html')) {
-        // Hoppa över själva översiktssidan articles/index.html och ignorerade filer
         if (currentRel === 'index.html') continue;
         if (
           IGNORED_FILES.has(entry.name) ||
@@ -122,6 +132,7 @@ function buildArticlesIndex() {
 
         articles.push({
           url: urlPath,
+          fullUrl: `${BASE_URL}${urlPath}`,
           title: meta.title,
           description: meta.description,
           date: meta.date
@@ -131,10 +142,12 @@ function buildArticlesIndex() {
   }
 
   findArticles(ARTICLES_DIR);
-
-  // Sortera nyaste artiklarna överst
   articles.sort((a, b) => b.date.localeCompare(a.date));
+  return articles;
+}
 
+// 1. Bygg översiktssidan articles/index.html
+function buildArticlesIndex(articles) {
   const listItemsHtml =
     articles.length > 0
       ? articles
@@ -153,9 +166,10 @@ function buildArticlesIndex() {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Articles | Multi-Religion Election System</title>
-  <meta name="description" content="Explore articles, publications, and analysis on the Multi-Religion Election System.">
+  <title>Articles | ${SITE_TITLE}</title>
+  <meta name="description" content="${SITE_DESCRIPTION}">
   <link rel="canonical" href="${BASE_URL}/articles/">
+  <link rel="alternate" type="application/rss+xml" title="${SITE_TITLE} RSS Feed" href="${BASE_URL}/feed.xml">
   <style>
     :root {
       --text-main: #1f2937;
@@ -172,6 +186,9 @@ function buildArticlesIndex() {
       padding: 2rem 1.25rem;
     }
     nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       margin-bottom: 2rem;
       font-size: 0.9rem;
     }
@@ -223,11 +240,12 @@ function buildArticlesIndex() {
 <body>
   <nav aria-label="Breadcrumb">
     <a href="/">&larr; Back to Home</a>
+    <a href="/feed.xml">RSS Feed</a>
   </nav>
   <main>
     <header>
       <h1>Articles</h1>
-      <p class="subtitle">Publications, analysis, and essays on the Multi-Religion Election System.</p>
+      <p class="subtitle">${SITE_DESCRIPTION}</p>
     </header>
     <ul class="article-list">
 ${listItemsHtml}
@@ -240,7 +258,45 @@ ${listItemsHtml}
   console.log(`📰 articles/index.html uppdaterad med ${articles.length} artiklar.`);
 }
 
-// Skannar hela webbplatsen för sitemap.xml
+// 2. Bygg RSS-flödet feed.xml
+function buildRssFeed(articles) {
+  const lastBuildDate =
+    articles.length > 0
+      ? new Date(`${articles[0].date}T12:00:00Z`).toUTCString()
+      : new Date().toUTCString();
+
+  const itemsXml = articles
+    .slice(0, 50) // Senaste 50 artiklarna i flödet
+    .map((art) => {
+      const pubDate = new Date(`${art.date}T12:00:00Z`).toUTCString();
+      return `    <item>
+      <title>${escapeXml(art.title)}</title>
+      <link>${escapeXml(art.fullUrl)}</link>
+      <guid isPermaLink="true">${escapeXml(art.fullUrl)}</guid>
+      <pubDate>${pubDate}</pubDate>
+      <description>${escapeXml(art.description || art.title)}</description>
+    </item>`;
+    })
+    .join('\n');
+
+  const rssXml = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>${escapeXml(SITE_TITLE)}</title>
+    <link>${BASE_URL}/</link>
+    <description>${escapeXml(SITE_DESCRIPTION)}</description>
+    <language>en</language>
+    <lastBuildDate>${lastBuildDate}</lastBuildDate>
+    <atom:link href="${BASE_URL}/feed.xml" rel="self" type="application/rss+xml" />
+${itemsXml}
+  </channel>
+</rss>`;
+
+  fs.writeFileSync(RSS_OUTPUT_PATH, rssXml, 'utf8');
+  console.log(`📡 feed.xml uppdaterad med ${Math.min(articles.length, 50)} artiklar.`);
+}
+
+// 3. Skanna hela webbplatsen för sitemap.xml
 function scanHtmlFiles(dir, relativePath = '') {
   let urls = [];
 
@@ -291,17 +347,17 @@ function scanHtmlFiles(dir, relativePath = '') {
   return urls;
 }
 
-// 1. Bygg översiktssidan articles/index.html först (så att den också kommer med i sitemapen)
-buildArticlesIndex();
+// Kör alla tre byggstegen i ordning
+const allArticles = collectArticles();
+buildArticlesIndex(allArticles);
+buildRssFeed(allArticles);
 
-// 2. Samla alla URL:er och sortera
 const discoveredUrls = scanHtmlFiles(ROOT_DIR).sort((a, b) => {
   if (a.loc === `${BASE_URL}/`) return -1;
   if (b.loc === `${BASE_URL}/`) return 1;
   return a.loc.localeCompare(b.loc);
 });
 
-// 3. Kontrollera och varna om dubbletter med stora/små bokstäver uppstår
 const seenLowercase = new Map();
 for (const item of discoveredUrls) {
   const lower = item.loc.toLowerCase();
@@ -314,18 +370,17 @@ for (const item of discoveredUrls) {
   }
 }
 
-// 4. Skriv ut sitemap.xml
 const sitemapXML = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${discoveredUrls
   .map(
     (item) => `  <url>
-    <loc>${item.loc}</loc>
+    <loc>${escapeXml(item.loc)}</loc>
     <lastmod>${item.lastmod}</lastmod>
   </url>`
   )
   .join('\n')}
 </urlset>`;
 
-fs.writeFileSync(OUTPUT_PATH, sitemapXML, 'utf8');
+fs.writeFileSync(SITEMAP_OUTPUT_PATH, sitemapXML, 'utf8');
 console.log(`✅ Sitemap uppdaterad med ${discoveredUrls.length} sidor.`);
