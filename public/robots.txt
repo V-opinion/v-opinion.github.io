@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Peka sökmotorer direkt till webbplatsens sitemap
+Sitemap: https://www.multireligionvalsystem.eu.org/sitemap.xml
