@@ -1,3 +1,5 @@
+const PUBLIC_DIR = __dirname; // Läser från rotmappen i stället för 'public'
+const OUTPUT_PATH = path.join(__dirname, 'sitemap.xml'); // Sparar i rotmappen
 const fs = require('fs');
 const path = require('path');
 
