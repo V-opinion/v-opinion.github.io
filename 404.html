@@ -83,6 +83,15 @@
  <style>
   @media screen and (min-width: 688px) and (max-width: 742px) {#xr_xr {top:0px;}}
  </style>
+	<script>
+  (function () {
+    const currentUrl = window.location.href;
+    const lowerUrl = currentUrl.toLowerCase();
+    if (currentUrl !== lowerUrl) {
+      window.location.replace(lowerUrl);
+    }
+  })();
+</script>
 </head>
 <body style="background-color:#606468">
 
