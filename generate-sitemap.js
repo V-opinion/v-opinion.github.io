@@ -1,13 +1,54 @@
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
 
 const BASE_URL = 'https://www.multireligionvalsystem.eu.org';
-const ROOT_DIR = __dirname; // Läser direkt från rotmappen
-const OUTPUT_PATH = path.join(ROOT_DIR, 'sitemap.xml'); // Skriver över sitemap.xml i rotmappen
+const ROOT_DIR = __dirname;
+const OUTPUT_PATH = path.join(ROOT_DIR, 'sitemap.xml');
 
-// Filer och mappar i rotmappen som INTE ska tas med i sitemapen
-const IGNORED_FILES = new Set(['404.html', 'google-verification.html']);
-const IGNORED_DIRS = new Set(['.git', '.github', 'node_modules', 'public', 'assets', 'css', 'js', 'images', 'fonts']);
+// Exakta filnamn som ska ignoreras
+const IGNORED_FILES = new Set([
+  '404.html',
+  'google-verification.html',
+  'a.html'
+]);
+
+// Filnamnsmönster som ska ignoreras (t.ex. webbläsarsparade filer som a_002.html)
+const IGNORED_FILE_PATTERNS = [
+  /^a(_\d+)?\.html$/i
+];
+
+// Mappar som ska ignoreras
+const IGNORED_DIRS = new Set([
+  '.git',
+  '.github',
+  'node_modules',
+  'public',
+  'assets',
+  'css',
+  'js',
+  'images',
+  'fonts',
+  'a_data'
+]);
+
+// Hämtar det verkliga datumet då filen senast ändrades i Git
+function getLastModDate(fullPath) {
+  try {
+    const gitDate = execSync(`git log -1 --format=%cs -- "${fullPath}"`, {
+      encoding: 'utf8',
+      stdio: ['pipe', 'pipe', 'ignore']
+    }).trim();
+
+    if (gitDate) {
+      return gitDate; // Returnerar YYYY-MM-DD
+    }
+  } catch (err) {
+    // Fallback om filen inte är committad i Git ännu
+  }
+  const stats = fs.statSync(fullPath);
+  return stats.mtime.toISOString().split('T')[0];
+}
 
 function scanHtmlFiles(dir, relativePath = '') {
   let urls = [];
@@ -25,11 +66,21 @@ function scanHtmlFiles(dir, relativePath = '') {
     const currentRelPath = relativePath ? `${relativePath}/${entry.name}` : entry.name;
 
     if (entry.isDirectory()) {
-      if (!IGNORED_DIRS.has(entry.name)) {
+      // Hoppa över ignorerade mappar samt webbläsarskapade *_data och *_files mappar
+      if (
+        !IGNORED_DIRS.has(entry.name) &&
+        !entry.name.endsWith('_data') &&
+        !entry.name.endsWith('_files')
+      ) {
         urls = urls.concat(scanHtmlFiles(fullPath, currentRelPath));
       }
     } else if (entry.isFile() && entry.name.endsWith('.html')) {
-      if (IGNORED_FILES.has(entry.name)) continue;
+      if (
+        IGNORED_FILES.has(entry.name) ||
+        IGNORED_FILE_PATTERNS.some((pattern) => pattern.test(entry.name))
+      ) {
+        continue;
+      }
 
       let urlPath;
       if (entry.name === 'index.html') {
@@ -38,13 +89,11 @@ function scanHtmlFiles(dir, relativePath = '') {
         urlPath = `/${currentRelPath}`;
       }
 
-      const stats = fs.statSync(fullPath);
-      const lastmod = stats.mtime.toISOString().split('T')[0];
+      const lastmod = getLastModDate(fullPath);
 
       urls.push({
         loc: `${BASE_URL}${urlPath}`,
-        lastmod,
-        priority: urlPath === '/' ? '1.0' : urlPath.includes('/2026/') ? '0.9' : '0.8',
+        lastmod
       });
     }
   }
@@ -65,8 +114,6 @@ ${discoveredUrls
     (item) => `  <url>
     <loc>${item.loc}</loc>
     <lastmod>${item.lastmod}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>${item.priority}</priority>
   </url>`
   )
   .join('\n')}
