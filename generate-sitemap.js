@@ -1,20 +1,14 @@
-const PUBLIC_DIR = __dirname; // Läser från rotmappen i stället för 'public'
-const OUTPUT_PATH = path.join(__dirname, 'sitemap.xml'); // Sparar i rotmappen
 const fs = require('fs');
 const path = require('path');
 
-// Exakt bas-URL (hårdkodad för att förhindra felaktiga domäner)
 const BASE_URL = 'https://www.multireligionvalsystem.eu.org';
-const PUBLIC_DIR = path.join(__dirname, 'public');
-const OUTPUT_PATH = path.join(PUBLIC_DIR, 'sitemap.xml');
+const ROOT_DIR = __dirname; // Läser direkt från rotmappen
+const OUTPUT_PATH = path.join(ROOT_DIR, 'sitemap.xml'); // Skriver över sitemap.xml i rotmappen
 
-// Mappar eller filer i public/ som INTE ska tas med i sitemapen
+// Filer och mappar i rotmappen som INTE ska tas med i sitemapen
 const IGNORED_FILES = new Set(['404.html', 'google-verification.html']);
-const IGNORED_DIRS = new Set(['assets', 'css', 'js', 'images', 'fonts']);
+const IGNORED_DIRS = new Set(['.git', '.github', 'node_modules', 'public', 'assets', 'css', 'js', 'images', 'fonts']);
 
-/**
- * Skannar rekursivt igenom public-mappen och returnerar alla HTML-sidor
- */
 function scanHtmlFiles(dir, relativePath = '') {
   let urls = [];
 
@@ -37,7 +31,6 @@ function scanHtmlFiles(dir, relativePath = '') {
     } else if (entry.isFile() && entry.name.endsWith('.html')) {
       if (IGNORED_FILES.has(entry.name)) continue;
 
-      // Omvandla index.html till ren mapp-URL (t.ex. /index.html -> /, /EU/index.html -> /EU/)
       let urlPath;
       if (entry.name === 'index.html') {
         urlPath = relativePath ? `/${relativePath}/` : '/';
@@ -45,7 +38,6 @@ function scanHtmlFiles(dir, relativePath = '') {
         urlPath = `/${currentRelPath}`;
       }
 
-      // Hämta filens faktiska senaste ändringsdatum (YYYY-MM-DD)
       const stats = fs.statSync(fullPath);
       const lastmod = stats.mtime.toISOString().split('T')[0];
 
@@ -60,14 +52,12 @@ function scanHtmlFiles(dir, relativePath = '') {
   return urls;
 }
 
-// Samla alla URL:er och sortera så att startsidan kommer först
-const discoveredUrls = scanHtmlFiles(PUBLIC_DIR).sort((a, b) => {
+const discoveredUrls = scanHtmlFiles(ROOT_DIR).sort((a, b) => {
   if (a.loc === `${BASE_URL}/`) return -1;
   if (b.loc === `${BASE_URL}/`) return 1;
   return a.loc.localeCompare(b.loc);
 });
 
-// Generera giltig XML
 const sitemapXML = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${discoveredUrls
@@ -82,7 +72,5 @@ ${discoveredUrls
   .join('\n')}
 </urlset>`;
 
-fs.mkdirSync(PUBLIC_DIR, { recursive: true });
 fs.writeFileSync(OUTPUT_PATH, sitemapXML, 'utf8');
-
-console.log(`✅ Sitemap genererad med ${discoveredUrls.length} sidor i ${OUTPUT_PATH}`);
+console.log(`✅ Sitemap uppdaterad i rotmappen med ${discoveredUrls.length} sidor.`);
