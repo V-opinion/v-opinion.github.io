@@ -44,7 +44,9 @@ Disallow: /wp-admin/
 Allow: /wp-admin/admin-ajax.php
 Disallow: /?s=
 Disallow: /search/
-
+Disallow: /*_data/
+Disallow: /*_files/
+Disallow: /*/a.html
 # Point search engine crawlers to the XML sitemap
 Sitemap: https://www.multireligionvalsystem.eu.org/sitemap.xml
 
