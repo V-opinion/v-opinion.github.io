@@ -18,7 +18,7 @@ const IGNORED_FILE_PATTERNS = [
   /^a(_\d+)?\.html$/i
 ];
 
-// Mappar som ska ignoreras
+// Mappar som ska ignoreras ('articles' är INTE med här, så den skannas automatiskt)
 const IGNORED_DIRS = new Set([
   '.git',
   '.github',
@@ -41,7 +41,7 @@ function getLastModDate(fullPath) {
     }).trim();
 
     if (gitDate) {
-      return gitDate; // Returnerar YYYY-MM-DD
+      return gitDate; // YYYY-MM-DD
     }
   } catch (err) {
     // Fallback om filen inte är committad i Git ännu
@@ -66,7 +66,6 @@ function scanHtmlFiles(dir, relativePath = '') {
     const currentRelPath = relativePath ? `${relativePath}/${entry.name}` : entry.name;
 
     if (entry.isDirectory()) {
-      // Hoppa över ignorerade mappar samt webbläsarskapade *_data och *_files mappar
       if (
         !IGNORED_DIRS.has(entry.name) &&
         !entry.name.endsWith('_data') &&
@@ -107,6 +106,17 @@ const discoveredUrls = scanHtmlFiles(ROOT_DIR).sort((a, b) => {
   return a.loc.localeCompare(b.loc);
 });
 
+// Kontrollera och varna om dubbletter med stora/små bokstäver uppstår
+const seenLowercase = new Map();
+for (const item of discoveredUrls) {
+  const lower = item.loc.toLowerCase();
+  if (seenLowercase.has(lower)) {
+    console.warn(`⚠️ Varning: Dubblett-URL med olika skiftläge hittades:\n  1: ${seenLowercase.get(lower)}\n  2: ${item.loc}`);
+  } else {
+    seenLowercase.set(lower, item.loc);
+  }
+}
+
 const sitemapXML = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${discoveredUrls
@@ -120,4 +130,4 @@ ${discoveredUrls
 </urlset>`;
 
 fs.writeFileSync(OUTPUT_PATH, sitemapXML, 'utf8');
-console.log(`✅ Sitemap uppdaterad i rotmappen med ${discoveredUrls.length} sidor.`);
+console.log(`✅ Sitemap uppdaterad med ${discoveredUrls.length} sidor (inklusive articles/).`);
