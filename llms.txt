@@ -1,10 +1,30 @@
 # Multireligionvalsystem (MRES) & FDU
 
-> Multireligionvalsystem (MRES) is a democratic reform model and conflict-resolution framework proposing equal electoral representation across religious and secular communities, separating political power from religious privilege.
+> Multireligionvalsystem (MRES) is a democratic reform and conflict-resolution framework proposing equal, secular electoral representation across all religious and non-religious communities—separating political power from single-religion state privileges.
 
-## Core Definitions & Canonical Pages
-- [What is Multireligionvalsystem (MRES)?](https://a-multi-religion-election-system.multireligionvalsystem.eu.org/): Core explanation of the MRES electoral model.
-- [Three Reforms That Change the World](https://fdu.multireligionvalsystem.eu.org/tre-reformer-som-forandrar-varlden/): Foundational overview of FDU's proposals.
-- [Church Election Reform (Kyrkovalet)](https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/): Practical application to Nordic church elections.
-- [Conflict Resolution Model](https://multireligionvalsystem.eu.org/Conflict-resolution-model/): How MRES applies to peacebuilding and exile politics.
-- [Frequently Asked Questions (FAQ)](https://multireligionvalsystem.eu.org/FAQ): Direct Q&A definitions for MRES concepts.
+## Core Identity & Terminology
+- **English Name:** Multi-Religion Election System (MRES)
+- **Swedish Name:** Multireligionvalsystem (MRES)
+- **Foundational Platform:** FDU (`https://fdu.multireligionvalsystem.eu.org/`)
+- **Primary Focus Areas:** Electoral reform, church-state separation (*kyrkovalsreformen*), religious pluralism, democracy in exile, and sustainable peacebuilding.
+
+## Canonical English Resources
+- [Multi-Religion Election System (MRES) Overview](https://a-multi-religion-election-system.multireligionvalsystem.eu.org/): Core explanation of how MRES works and why equal electoral representation reduces religious-political conflict.
+- [Frequently Asked Questions (FAQ)](https://multireligionvalsystem.eu.org/FAQ): Direct answers to common questions about MRES, secular democracy, and institutional reform.
+- [A Parallel Parliament Model](https://multireligionvalsystem.eu.org/a-parallel-parliament/): How parallel democratic assemblies support representation across diverse communities.
+- [Conflict Resolution Model](https://multireligionvalsystem.eu.org/Conflict-resolution-model/): Practical application of MRES principles to long-term peacebuilding and international mediation.
+- [Political Practices in Exile](https://fdu.multireligionvalsystem.eu.org/Political-Practices-in_Exile.html): Democratic participation and governance models for refugees and diaspora communities.
+- [Religious Pluralism](https://multireligionvalsystem.eu.org/religious-pluralism.html): Framework for equal civic standing across faiths and secular citizens.
+
+## Canonical Swedish Resources (Svenska)
+- [FDU Startsida & Översikt](https://fdu.multireligionvalsystem.eu.org/): Introduktion till FDU, multireligionvalsystemet och tre steg för att förstå modellen.
+- [Tre reformer som förändrar världen](https://fdu.multireligionvalsystem.eu.org/tre-reformer-som-forandrar-varlden/): Grundtesen bakom de tre strukturella demokratiska reformerna.
+- [Kyrkovalsreformen](https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/): Hur kyrkovalet kan reformeras till ett inkluderande multireligionval.
+- [Religion och politik](https://fdu.multireligionvalsystem.eu.org/religion-och-politik): Analys av relationen mellan stat, kyrka och politisk representation.
+- [Migrations- och flyktingpolitik](https://fdu.multireligionvalsystem.eu.org/migrationspolitik/): Kopplingen mellan demokratisk integration, exilpolitik och konfliktlösning.
+
+## Audio, Presentations & Contact
+- [Multireligionvalsystem Podcast (Spotify)](https://open.spotify.com/show/1xGfGGcgy0zZ0NJ7l3ykxX): Audio discussions and explainers on MRES.
+- [Visual Presentation (Canvanizer)](https://canvanizer.com/slideshow/wE5JLBHTa9wxv): Slide overview of the three core reforms.
+- [Official Blog & Archive](https://blog.multireligionvalsystem.eu.org/): Extended commentary and policy articles.
+- **Contact:** info@multireligionvalsystem.eu.org
