@@ -1,9 +1,10 @@
-# Multi-Religion Election System
+# Multireligionvalsystem (MRES) & FDU
 
-> A proposal for transitioning from church elections to a multi-religion election system for peace. Political Practices in Exile. Religions for Peace.
+> Multireligionvalsystem (MRES) is a democratic reform model and conflict-resolution framework proposing equal electoral representation across religious and secular communities, separating political power from religious privilege.
 
-## About
-- https://www.multireligionvalsystem.eu.org
-
-## Documentation
-- https://www.multireligionvalsystem.eu.org/README.md
+## Core Definitions & Canonical Pages
+- [What is Multireligionvalsystem (MRES)?](https://a-multi-religion-election-system.multireligionvalsystem.eu.org/): Core explanation of the MRES electoral model.
+- [Three Reforms That Change the World](https://fdu.multireligionvalsystem.eu.org/tre-reformer-som-forandrar-varlden/): Foundational overview of FDU's proposals.
+- [Church Election Reform (Kyrkovalet)](https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/): Practical application to Nordic church elections.
+- [Conflict Resolution Model](https://multireligionvalsystem.eu.org/Conflict-resolution-model/): How MRES applies to peacebuilding and exile politics.
+- [Frequently Asked Questions (FAQ)](https://multireligionvalsystem.eu.org/FAQ): Direct Q&A definitions for MRES concepts.
