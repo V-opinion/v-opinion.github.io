@@ -1,48 +1,38 @@
-name: Build and Deploy Sitemap & Site
+name: Auto-generate Sitemap
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+    paths-ignore:
+      - 'sitemap.xml'
   workflow_dispatch:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
+  pull-requests: write
 
 jobs:
-  build-and-deploy:
+  update-sitemap:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-- name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
 
-      - name: Generate Sitemap
-        run: node generate-sitemap.js
+      # Replace this step with your existing sitemap generation command/script
+      - name: Generate sitemap.xml
+        run: |
+          # Your existing sitemap generator command goes here
+          echo "Generating sitemap.xml..."
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Create Pull Request with updated sitemap.xml
+        uses: peter-evans/create-pull-request@v7
         with:
-          path: '.'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: auto-generate sitemap.xml [skip ci]"
+          title: "chore: auto-generate sitemap.xml"
+          body: "Automated update to `sitemap.xml`."
+          branch: chore/auto-sitemap
+          delete-branch: true
 
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-        - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+
