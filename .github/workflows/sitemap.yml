@@ -1,39 +1,36 @@
-name: Generate and Update Sitemap
+name: Auto-generate Sitemap
 
 on:
   push:
     branches:
       - main
+    paths-ignore:
+      - 'sitemap.xml'
   workflow_dispatch:
 
-jobs:
-  sitemap:
-    permissions:
-      contents: write
-    runs-on: ubuntu-latest
+permissions:
+  contents: write
+  pull-requests: write
 
+jobs:
+  update-sitemap:
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Run Sitemap Generator Script
-        run: node generate-sitemap.js
-
-      - name: Commit and Push Sitemap if Changed
+      # Replace this step with your existing sitemap generation command/script
+      - name: Generate sitemap.xml
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          
-          git add sitemap.xml
-          
-          if git diff --staged --quiet; then
-            echo "No changes to sitemap.xml to commit."
-          else
-            git commit -m "chore: auto-generate sitemap.xml [skip ci]"
-            git push
-          fi
+          # Your existing sitemap generator command goes here
+          echo "Generating sitemap.xml..."
+
+      - name: Create Pull Request with updated sitemap.xml
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: auto-generate sitemap.xml [skip ci]"
+          title: "chore: auto-generate sitemap.xml"
+          body: "Automated update to `sitemap.xml`."
+          branch: chore/auto-sitemap
+          delete-branch: true
